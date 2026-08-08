@@ -84,4 +84,629 @@ letter-spacing:1.2px;
 
 .brand-sub{
 font-size:11px;
-color:#cbd5
+color:#cbd5e1;
+letter-spacing:.4px;
+}
+
+nav{
+display:flex;
+gap:25px;
+}
+
+nav a{
+color:#eef2f7;
+font-size:14px;
+}
+
+nav a:hover{
+color:var(--gold);
+}
+
+/* HERO */
+
+.hero{
+background:linear-gradient(135deg,#10233f 0%,#18365c 100%);
+color:#fff;
+padding:95px 24px 100px;
+}
+
+.hero-inner{
+max-width:1000px;
+margin:auto;
+text-align:center;
+}
+
+.kicker{
+color:#e1c77a;
+font-size:13px;
+letter-spacing:2px;
+text-transform:uppercase;
+font-weight:700;
+}
+
+.hero h1{
+font-size:52px;
+letter-spacing:1px;
+margin:12px 0 10px;
+}
+
+.hero h2{
+font-size:20px;
+font-weight:400;
+color:#dbe4ef;
+margin-bottom:25px;
+}
+
+.hero p{
+max-width:760px;
+margin:auto;
+color:#d5deea;
+font-size:17px;
+}
+
+.btn{
+display:inline-block;
+margin-top:30px;
+padding:13px 23px;
+border-radius:5px;
+background:var(--gold);
+color:#16243a;
+font-weight:700;
+}
+
+.btn.secondary{
+background:transparent;
+color:#fff;
+border:1px solid rgba(255,255,255,.35);
+margin-left:10px;
+}
+
+/* SECTIONS */
+
+.container{
+max-width:1120px;
+margin:auto;
+padding:72px 24px;
+}
+
+.section-head{
+margin-bottom:30px;
+}
+
+.section-head .eyebrow{
+color:#9a792d;
+font-size:12px;
+letter-spacing:1.8px;
+text-transform:uppercase;
+font-weight:700;
+}
+
+.section-head h2{
+font-size:32px;
+color:var(--navy);
+margin-top:5px;
+}
+
+.section-head p{
+color:var(--muted);
+max-width:700px;
+}
+
+/* CARDS */
+
+.grid{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:18px;
+}
+
+.card{
+background:#fff;
+border:1px solid var(--line);
+border-radius:10px;
+padding:27px;
+box-shadow:0 5px 18px rgba(16,35,63,.04);
+}
+
+.card .num{
+font-size:13px;
+color:var(--gold);
+font-weight:700;
+}
+
+.card h3{
+color:var(--navy);
+margin:8px 0 10px;
+font-size:19px;
+}
+
+.card p{
+color:var(--muted);
+font-size:14px;
+}
+
+/* PUBLICATION */
+
+.feature{
+background:#fff;
+border:1px solid var(--line);
+border-radius:12px;
+display:grid;
+grid-template-columns:1.5fr .8fr;
+overflow:hidden;
+box-shadow:0 8px 25px rgba(16,35,63,.06);
+}
+
+.feature-main{
+padding:38px;
+}
+
+.feature-tag{
+display:inline-block;
+background:#f7f0df;
+color:#80631f;
+border-radius:20px;
+padding:6px 11px;
+font-size:12px;
+font-weight:700;
+}
+
+.feature h3{
+font-size:26px;
+color:var(--navy);
+margin:16px 0 12px;
+}
+
+.feature p{
+color:var(--muted);
+max-width:720px;
+}
+
+.feature-side{
+background:var(--navy);
+color:#fff;
+padding:38px;
+display:flex;
+flex-direction:column;
+justify-content:center;
+}
+
+.stat{
+padding:15px 0;
+border-bottom:1px solid rgba(255,255,255,.15);
+}
+
+.stat:last-child{
+border-bottom:0;
+}
+
+.stat strong{
+display:block;
+font-size:25px;
+color:#e1c77a;
+}
+
+.stat span{
+font-size:12px;
+color:#cbd5e1;
+}
+
+/* ABOUT */
+
+.about{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:25px;
+}
+
+.panel{
+background:#fff;
+border:1px solid var(--line);
+border-radius:10px;
+padding:30px;
+}
+
+.panel h3{
+color:var(--navy);
+margin-bottom:10px;
+}
+
+.panel p{
+color:var(--muted);
+}
+
+/* FOOTER */
+
+footer{
+background:#0c1b30;
+color:#cbd5e1;
+text-align:center;
+padding:35px 24px;
+}
+
+footer strong{
+color:#fff;
+}
+
+footer small{
+display:block;
+margin-top:7px;
+color:#8fa0b5;
+}
+
+/* MOBILE */
+
+@media(max-width:850px){
+
+.grid{
+grid-template-columns:repeat(2,1fr);
+}
+
+.feature,
+.about{
+grid-template-columns:1fr;
+}
+
+nav{
+gap:12px;
+}
+
+}
+
+@media(max-width:600px){
+
+.nav{
+align-items:flex-start;
+gap:12px;
+flex-direction:column;
+}
+
+nav{
+flex-wrap:wrap;
+}
+
+.hero h1{
+font-size:38px;
+}
+
+.grid{
+grid-template-columns:1fr;
+}
+
+.btn.secondary{
+margin-left:0;
+}
+
+}
+</style>
+</head>
+
+<body>
+
+<header>
+
+<div class="nav">
+
+<a class="brand" href="#accueil">
+
+<span class="brand-mark">RA</span>
+
+<span>
+
+<span class="brand-title">
+RAHAOUI ANALYTICS
+</span>
+
+<br>
+
+<span class="brand-sub">
+RAHAOUI MOHAMED
+</span>
+
+</span>
+
+</a>
+
+<nav>
+
+<a href="#accueil">Accueil</a>
+
+<a href="#analyses">Analyses</a>
+
+<a href="#publication">Publications</a>
+
+<a href="#apropos">À propos</a>
+
+</nav>
+
+</div>
+
+</header>
+
+
+<main>
+
+<section class="hero" id="accueil">
+
+<div class="hero-inner">
+
+<div class="kicker">
+Plateforme personnelle d'analyse
+</div>
+
+<h1>
+RAHAOUI ANALYTICS
+</h1>
+
+<h2>
+Economic • Financial • Data Analysis
+</h2>
+
+<p>
+Analyses structurées de l'économie marocaine,
+des finances publiques et des données économiques,
+avec une approche fondée sur les indicateurs,
+les tendances et les sources statistiques.
+</p>
+
+<a class="btn" href="#publication">
+Voir la dernière analyse
+</a>
+
+<a class="btn secondary" href="#apropos">
+À propos
+</a>
+
+</div>
+
+</section>
+
+
+<section class="container" id="analyses">
+
+<div class="section-head">
+
+<div class="eyebrow">
+Axes de travail
+</div>
+
+<h2>
+Domaines d'analyse
+</h2>
+
+<p>
+Un espace dédié à l'étude des principales dynamiques
+économiques et financières du Maroc.
+</p>
+
+</div>
+
+
+<div class="grid">
+
+<article class="card">
+
+<div class="num">01</div>
+
+<h3>
+Économie marocaine
+</h3>
+
+<p>
+Croissance, inflation, investissement,
+emploi, commerce extérieur et conjoncture.
+</p>
+
+</article>
+
+
+<article class="card">
+
+<div class="num">02</div>
+
+<h3>
+Finances publiques
+</h3>
+
+<p>
+Recettes, dépenses, déficit, dette publique
+et trajectoire budgétaire.
+</p>
+
+</article>
+
+
+<article class="card">
+
+<div class="num">03</div>
+
+<h3>
+Data & statistiques
+</h3>
+
+<p>
+Lecture des données, indicateurs, tableaux
+et visualisations pour mieux comprendre les tendances.
+</p>
+
+</article>
+
+
+<article class="card">
+
+<div class="num">04</div>
+
+<h3>
+Analyse financière
+</h3>
+
+<p>
+Performance, risques, indicateurs financiers
+et facteurs influençant les décisions.
+</p>
+
+</article>
+
+</div>
+
+</section>
+
+
+<section class="container" id="publication">
+
+<div class="section-head">
+
+<div class="eyebrow">
+Publication récente
+</div>
+
+<h2>
+Note d'analyse N°01
+</h2>
+
+</div>
+
+
+<article class="feature">
+
+<div class="feature-main">
+
+<span class="feature-tag">
+MAROC • 2026
+</span>
+
+<h3>
+Analyse économique et financière du Maroc
+à l'horizon 2026
+</h3>
+
+<p>
+Étude du contexte macroéconomique,
+des finances publiques et de la trajectoire budgétaire,
+avec mise en perspective des principaux indicateurs économiques.
+</p>
+
+<a class="btn" href="#apropos">
+Consulter la publication
+</a>
+
+</div>
+
+
+<aside class="feature-side">
+
+<div class="stat">
+
+<strong>
+2026
+</strong>
+
+<span>
+Horizon d'analyse
+</span>
+
+</div>
+
+
+<div class="stat">
+
+<strong>
+Macro
+</strong>
+
+<span>
+Contexte économique
+</span>
+
+</div>
+
+
+<div class="stat">
+
+<strong>
+Budget
+</strong>
+
+<span>
+Finances publiques
+</span>
+
+</div>
+
+</aside>
+
+</article>
+
+</section>
+
+
+<section class="container" id="apropos">
+
+<div class="section-head">
+
+<div class="eyebrow">
+Profil
+</div>
+
+<h2>
+À propos
+</h2>
+
+</div>
+
+
+<div class="about">
+
+<div class="panel">
+
+<h3>
+RAHAOUI MOHAMED
+</h3>
+
+<p>
+Intérêt professionnel pour l'analyse économique
+et financière, les finances publiques,
+la gestion des risques et l'analyse des données.
+</p>
+
+</div>
+
+
+<div class="panel">
+
+<h3>
+Objectif de la plateforme
+</h3>
+
+<p>
+Transformer les données économiques en analyses claires,
+structurées et accessibles, tout en développant progressivement
+un portefeuille de publications.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+</main>
+
+
+<footer>
+
+<p>
+<strong>
+RAHAOUI ANALYTICS
+</strong>
+— RAHAOUI MOHAMED
+</p>
+
+<small>
+Economic • Financial • Data Analysis | 2026
+</small>
+
+</footer>
+
+</body>
+</html>
