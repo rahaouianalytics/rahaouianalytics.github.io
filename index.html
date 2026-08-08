@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>RAHAOUI ANALYTICS | Analyse économique et financière</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f7f8fa;
+            color: #1f2937;
+            line-height: 1.6;
+        }
+
+        header {
+            background: #12233f;
+            color: white;
+            padding: 25px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 25px;
+            font-size: 15px;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        .hero {
+            background: white;
+            padding: 90px 8%;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 42px;
+            color: #12233f;
+            margin-bottom: 15px;
+        }
+
+        .hero h2 {
+            font-size: 22px;
+            font-weight: normal;
+            color: #64748b;
+            margin-bottom: 25px;
+        }
+
+        .hero p {
+            max-width: 750px;
+            margin: auto;
+            color: #475569;
+            font-size: 17px;
+        }
+
+        .button {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 13px 25px;
+            background: #12233f;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        .section {
+            padding: 65px 8%;
+        }
+
+        .section h2 {
+            text-align: center;
+            color: #12233f;
+            margin-bottom: 35px;
+            font-size: 30px;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 22px;
+        }
+
+        .card {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 3px 12px rgba(0,0,0,0.06);
+        }
+
+        .card h3 {
+            color: #12233f;
+            margin-bottom: 12px;
+        }
+
+        .publication {
+            max-width: 850px;
+            margin: auto;
+            background: white;
+            padding: 35px;
+            border-left: 5px solid #12233f;
+            box-shadow: 0 3px 12px rgba(0,0,0,0.06);
+        }
+
+        .publication h3 {
+            color: #12233f;
+            margin-bottom: 12px;
+        }
+
+        footer {
+            background: #12233f;
+            color: white;
+            text-align: center;
+            padding: 30px;
+            margin-top: 30px;
+        }
+
+        @media (max-width: 700px) {
+            header {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav a {
+                margin: 0 8px;
+            }
+
+            .hero h1 {
+                font-size: 32px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">RAHAOUI ANALYTICS</div>
+
+    <nav>
+        <a href="#accueil">Accueil</a>
+        <a href="#analyses">Analyses</a>
+        <a href="#publications">Publications</a>
+        <a href="#apropos">À propos</a>
+    </nav>
+</header>
+
+<section class="hero" id="accueil">
+
+    <h1>RAHAOUI ANALYTICS</h1>
+
+    <h2>Economic • Financial • Data Analysis</h2>
+
+    <p>
+        Plateforme personnelle consacrée à l'analyse économique,
+        financière et statistique, avec un intérêt particulier pour
+        l'économie marocaine, les finances publiques et les données économiques.
+    </p>
+
+    <a class="button" href="#analyses">Découvrir les analyses</a>
+
+</section>
+
+<section class="section" id="analyses">
+
+    <h2>Domaines d'analyse</h2>
+
+    <div class="cards">
+
+        <div class="card">
+            <h3>Économie marocaine</h3>
+            <p>
+                Analyse de la croissance, de l'inflation,
+                de l'investissement et des principaux indicateurs
+                macroéconomiques du Maroc.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>Finances publiques</h3>
+            <p>
+                Analyse des recettes, dépenses, déficit budgétaire,
+                dette publique et trajectoire budgétaire.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>Data & statistiques</h3>
+            <p>
+                Exploitation des données économiques et statistiques
+                afin d'identifier les tendances et les évolutions.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>Analyse financière</h3>
+            <p>
+                Étude des indicateurs financiers, des risques
+                et des principaux facteurs influençant la performance.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+<section class="section" id="publications">
+
+    <h2>Dernière publication</h2>
+
+    <div class="publication">
+
+        <h3>NOTE D'ANALYSE ÉCONOMIQUE N°01</h3>
+
+        <h3>
+            Analyse économique et financière du Maroc à l'horizon 2026
+        </h3>
+
+        <p>
+            Contexte macroéconomique, finances publiques
+            et trajectoire budgétaire.
+        </p>
+
+        <a class="button" href="#">
+            Lire l'analyse
+        </a>
+
+    </div>
+
+</section>
+
+<section class="section" id="apropos">
+
+    <h2>À propos</h2>
+
+    <div class="publication">
+
+        <h3>RAHAOUI MOHAMED</h3>
+
+        <p>
+            Intérêt professionnel pour l'analyse économique et financière,
+            les finances publiques, la gestion des risques et l'analyse
+            des données.
+        </p>
+
+        <br>
+
+        <p>
+            RAHAOUI ANALYTICS a pour objectif de transformer les données
+            économiques en analyses structurées, accessibles et fondées
+            sur des sources statistiques fiables.
+        </p>
+
+    </div>
+
+</section>
+
+<footer>
+
+    <p>© 2026 RAHAOUI ANALYTICS — RAHAOUI MOHAMED</p>
+
+</footer>
+
+</body>
+</html>
