@@ -420,7 +420,105 @@ box-shadow:none;
 .btn.secondary:hover{
 background:rgba(255,255,255,.09);
 }
+<section class="intel-section">
 
+<div class="intel-container">
+
+<div class="intel-heading">
+
+<div>
+<span class="eyebrow">Economic Intelligence</span>
+
+<h2>
+Lecture des principales dynamiques économiques
+</h2>
+
+<p>
+Un espace dédié au suivi et à l'interprétation des indicateurs économiques,
+financiers et statistiques.
+</p>
+</div>
+
+<div class="intel-status">
+<span></span>
+Data Analysis
+</div>
+
+</div>
+
+
+<div class="intel-grid">
+
+<div class="intel-card intel-main">
+
+<div class="intel-card-head">
+
+<div>
+<span class="intel-label">ANALYTICAL VIEW</span>
+<h3>Economic Trends</h3>
+</div>
+
+<div class="intel-symbol">↗</div>
+
+</div>
+
+<div class="intel-chart">
+
+<div class="chart-grid"></div>
+
+<div class="trend-line">
+<span class="point p1"></span>
+<span class="point p2"></span>
+<span class="point p3"></span>
+<span class="point p4"></span>
+<span class="point p5"></span>
+<span class="point p6"></span>
+</div>
+
+</div>
+
+<div class="intel-footer">
+<span>Macro indicators</span>
+<span>Trend analysis</span>
+<span>Statistical reading</span>
+</div>
+
+</div>
+
+
+<div class="intel-side">
+
+<div class="intel-mini">
+<span class="mini-label">01</span>
+<strong>Macro</strong>
+<p>Conjoncture économique</p>
+</div>
+
+<div class="intel-mini">
+<span class="mini-label">02</span>
+<strong>Finance</strong>
+<p>Performance & risques</p>
+</div>
+
+<div class="intel-mini">
+<span class="mini-label">03</span>
+<strong>Public Finance</strong>
+<p>Budget & dette</p>
+</div>
+
+<div class="intel-mini">
+<span class="mini-label">04</span>
+<strong>Data</strong>
+<p>Indicateurs & statistiques</p>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
 /* =========================
    CONTAINERS
 ========================= */
@@ -459,7 +557,208 @@ max-width:700px;
 margin-top:8px;
 font-size:15px;
 }
+/* =========================
+   ECONOMIC INTELLIGENCE
+========================= */
 
+.intel-section{
+background:#eef2f6;
+border-top:1px solid #e3e8ee;
+border-bottom:1px solid #e3e8ee;
+}
+
+.intel-container{
+max-width:1120px;
+margin:auto;
+padding:78px 24px;
+}
+
+.intel-heading{
+display:flex;
+justify-content:space-between;
+align-items:flex-end;
+gap:30px;
+margin-bottom:30px;
+}
+
+.intel-heading h2{
+color:var(--navy);
+font-size:clamp(25px,3.5vw,32px);
+line-height:1.25;
+margin:5px 0 8px;
+}
+
+.intel-heading p{
+color:var(--muted);
+font-size:14px;
+max-width:650px;
+}
+
+.intel-status{
+display:flex;
+align-items:center;
+gap:9px;
+padding:9px 13px;
+border:1px solid #dce3ea;
+background:#fff;
+border-radius:30px;
+font-size:10px;
+font-weight:700;
+letter-spacing:1px;
+text-transform:uppercase;
+color:#66758a;
+white-space:nowrap;
+}
+
+.intel-status span{
+width:7px;
+height:7px;
+border-radius:50%;
+background:#8aa36b;
+box-shadow:0 0 10px rgba(138,163,107,.5);
+}
+
+.intel-grid{
+display:grid;
+grid-template-columns:1.65fr .75fr;
+gap:18px;
+}
+
+.intel-card{
+background:var(--navy);
+border-radius:15px;
+border:1px solid rgba(255,255,255,.07);
+box-shadow:0 18px 45px rgba(11,29,53,.12);
+}
+
+.intel-main{
+padding:31px;
+overflow:hidden;
+}
+
+.intel-card-head{
+display:flex;
+justify-content:space-between;
+align-items:flex-start;
+}
+
+.intel-label{
+font-size:9px;
+letter-spacing:1.8px;
+color:#9eafc2;
+}
+
+.intel-card h3{
+color:#fff;
+font-size:22px;
+margin-top:5px;
+}
+
+.intel-symbol{
+width:38px;
+height:38px;
+border:1px solid rgba(210,173,85,.3);
+border-radius:10px;
+display:grid;
+place-items:center;
+color:var(--gold2);
+font-size:18px;
+}
+
+.intel-chart{
+height:190px;
+margin-top:28px;
+position:relative;
+overflow:hidden;
+border-bottom:1px solid rgba(255,255,255,.12);
+}
+
+.chart-grid{
+position:absolute;
+inset:0;
+background:
+linear-gradient(rgba(255,255,255,.045) 1px,transparent 1px),
+linear-gradient(90deg,rgba(255,255,255,.045) 1px,transparent 1px);
+background-size:55px 38px;
+}
+
+.trend-line{
+position:absolute;
+left:2%;
+right:2%;
+bottom:40px;
+height:100px;
+border-top:2px solid var(--gold);
+transform:skewY(-8deg) rotate(-1deg);
+filter:drop-shadow(0 0 7px rgba(210,173,85,.28));
+}
+
+.point{
+position:absolute;
+width:8px;
+height:8px;
+border-radius:50%;
+background:var(--gold2);
+box-shadow:0 0 13px rgba(234,208,138,.65);
+}
+
+.p1{left:5%;top:72px;}
+.p2{left:22%;top:57px;}
+.p3{left:39%;top:65px;}
+.p4{left:56%;top:35px;}
+.p5{left:74%;top:45px;}
+.p6{right:2%;top:12px;}
+
+.intel-footer{
+display:flex;
+gap:22px;
+margin-top:17px;
+font-size:9px;
+text-transform:uppercase;
+letter-spacing:.7px;
+color:#91a4b8;
+}
+
+.intel-side{
+display:grid;
+grid-template-columns:1fr;
+gap:1px;
+background:#dce3ea;
+border-radius:15px;
+overflow:hidden;
+box-shadow:0 12px 35px rgba(11,29,53,.07);
+}
+
+.intel-mini{
+background:#fff;
+padding:22px;
+transition:background .25s ease,transform .25s ease;
+}
+
+.intel-mini:hover{
+background:#fbfcfd;
+transform:translateX(3px);
+}
+
+.mini-label{
+font-size:9px;
+color:#a58232;
+font-weight:700;
+letter-spacing:1px;
+}
+
+.intel-mini strong{
+display:block;
+font-size:17px;
+color:var(--navy);
+margin-top:4px;
+}
+
+.intel-mini p{
+font-size:11px;
+color:var(--muted);
+margin-top:2px;
+}
 /* =========================
    CARDS
 ========================= */
@@ -814,7 +1113,27 @@ gap:16px;
 .panel{
 padding:27px 24px;
 }
+.intel-heading{
+align-items:flex-start;
+flex-direction:column;
+}
 
+.intel-grid{
+grid-template-columns:1fr;
+}
+
+.intel-main{
+padding:25px 20px;
+}
+
+.intel-chart{
+height:160px;
+}
+
+.intel-footer{
+flex-wrap:wrap;
+gap:10px 16px;
+}
 }
 
 /* ACCESSIBILITY */
