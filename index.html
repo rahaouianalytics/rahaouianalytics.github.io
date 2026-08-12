@@ -41,6 +41,7 @@ color:var(--ink);
 background:var(--light);
 line-height:1.7;
 -webkit-font-smoothing:antialiased;
+overflow-x:hidden;
 }
 
 a{
@@ -1041,7 +1042,16 @@ grid-template-columns:1fr;
 nav{
 gap:16px;
 }
+.hero-visual{
+    width:100%;
+    overflow:hidden;
+}
 
+.analytics-card{
+    width:100%;
+    max-width:100%;
+    box-sizing:border-box;
+}
 }
 
 @media(max-width:650px){
