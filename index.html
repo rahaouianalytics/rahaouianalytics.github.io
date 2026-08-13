@@ -1078,7 +1078,7 @@ gap:16px;
 }
 .nav{
 padding:14px 18px;
-align-items:center;
+align-items:flex-start;
 gap:13px;
 flex-direction:column;
 }
@@ -1101,7 +1101,9 @@ padding:78px 20px 85px;
 font-size:39px;
 letter-spacing:.5px;
 }
-
+.main-title{
+    text-align:center;
+}
 .hero h2{
 font-size:17px;
 }
@@ -1189,7 +1191,9 @@ scroll-behavior:auto !important;
 animation:none !important;
 transition:none !important;
 }
-
+.hero::before{
+    top:300px;
+}
 }
 </style>
 </head>
