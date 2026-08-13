@@ -62,8 +62,6 @@ position:sticky;
 top:0;
 z-index:100;
 background:rgba(11,29,53,.94);
-backdrop-filter:blur(14px);
--webkit-backdrop-filter:blur(14px);
 border-bottom:1px solid rgba(255,255,255,.08);
 box-shadow:0 5px 25px rgba(0,0,0,.10);
 }
@@ -1078,13 +1076,9 @@ gap:16px;
     max-width:100%;
     box-sizing:border-box;
 }
-header{
-position:relative;
-}
-
 .nav{
 padding:14px 18px;
-align-items:flex-start;
+align-items:center;
 gap:13px;
 flex-direction:column;
 }
@@ -1181,9 +1175,7 @@ width:100%;
 max-width:100%;
 box-sizing:border-box;
 }
-.hero::before{
-    top:180px;
-}
+
 }
 
 /* ACCESSIBILITY */
