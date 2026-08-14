@@ -1186,7 +1186,7 @@ box-sizing:border-box;
 .hero::before{
     top:400px;
    height:260;
-   width:1600px;
+   width:160px;
 }
 }
 
@@ -1602,11 +1602,17 @@ Economic • Financial • Data Analysis | 2026
 
 </footer>
 <script>
+if ('scrollRestoration' in history) {
+    history.scrollRestoration = 'manual';
+}
+
 window.addEventListener('load', function () {
-    if (!window.location.hash) {
+    history.replaceState(null, '', window.location.pathname + window.location.search);
+
+    setTimeout(function () {
         window.scrollTo(0, 0);
-    }
+    }, 200);
 });
-</script>   
+</script>  
 </body>
 </html>
