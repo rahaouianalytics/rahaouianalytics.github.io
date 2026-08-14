@@ -1185,8 +1185,8 @@ box-sizing:border-box;
 }
 .hero::before{
     top:400px;
-   height:260;
-   width:160px;
+   height:300;
+   width:200px;
 }
 }
 
@@ -1204,6 +1204,11 @@ transition:none !important;
 
 }
 </style>
+   <script>
+if ('scrollRestoration' in history) {
+    history.scrollRestoration = 'manual';
+}
+</script>
 </head>
 
 <body>
@@ -1600,19 +1605,6 @@ RAHAOUI ANALYTICS
 Economic • Financial • Data Analysis | 2026
 </small>
 
-</footer>
-<script>
-if ('scrollRestoration' in history) {
-    history.scrollRestoration = 'manual';
-}
-
-window.addEventListener('load', function () {
-    history.replaceState(null, '', window.location.pathname + window.location.search);
-
-    setTimeout(function () {
-        window.scrollTo(0, 0);
-    }, 200);
-});
-</script>  
+</footer> 
 </body>
 </html>
