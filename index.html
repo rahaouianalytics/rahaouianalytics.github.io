@@ -14,1239 +14,1657 @@
 <meta property="og:url" content="https://rahaouianalytics.github.io/">
 <meta property="og:type" content="website">
 
-<meta name="theme-color" content="#0b1d35">
+<meta name="theme-color" content="#071525">
 
 <title>RAHAOUI ANALYTICS | Analyse économique et financière</title>
 
 <style>
+
+/* =========================================================
+   VARIABLES
+========================================================= */
+
 :root{
---navy:#0b1d35;
---navy2:#14345a;
---navy3:#1d4773;
---gold:#d2ad55;
---gold2:#ead08a;
---ink:#172334;
---muted:#66758a;
---light:#f4f6f9;
---white:#ffffff;
---line:#e4e9ef;
---shadow:0 18px 45px rgba(11,29,53,.08);
---shadow-hover:0 24px 55px rgba(11,29,53,.14);
+    --navy:#071525;
+    --navy2:#0b2038;
+    --navy3:#102d4a;
+
+    --blue:#1c8cff;
+    --cyan:#35d9ff;
+
+    --gold:#d2ad55;
+    --gold2:#ead08a;
+
+    --white:#ffffff;
+    --text:#172334;
+    --muted:#66758a;
+    --light:#f4f7fa;
+    --line:#e3e9ef;
+
+    --shadow:0 20px 55px rgba(7,21,37,.10);
 }
 
+/* =========================================================
+   RESET
+========================================================= */
+
 *{
-box-sizing:border-box;
-margin:0;
-padding:0;
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
 }
 
 html{
-scroll-behavior:auto;
-overflow-anchor:none;
+    scroll-behavior:smooth;
 }
 
 body{
-font-family:Arial,Helvetica,sans-serif;
-color:var(--ink);
-background:var(--light);
-line-height:1.7;
--webkit-font-smoothing:antialiased;
+    font-family:Arial,Helvetica,sans-serif;
+    color:var(--text);
+    background:var(--light);
+    line-height:1.7;
+    -webkit-font-smoothing:antialiased;
 }
 
 a{
-text-decoration:none;
-color:inherit;
+    color:inherit;
+    text-decoration:none;
 }
 
 ::selection{
-background:var(--gold);
-color:var(--navy);
+    background:var(--gold);
+    color:var(--navy);
 }
 
-/* =========================
+/* =========================================================
    HEADER
-========================= */
+========================================================= */
 
 header{
-position:sticky;
-top:0;
-z-index:100;
-background:rgba(11,29,53,.94);
-border-bottom:1px solid rgba(255,255,255,.08);
-box-shadow:0 5px 25px rgba(0,0,0,.10);
+    position:sticky;
+    top:0;
+    z-index:100;
+    background:rgba(7,21,37,.94);
+    backdrop-filter:blur(14px);
+    -webkit-backdrop-filter:blur(14px);
+    border-bottom:1px solid rgba(255,255,255,.08);
 }
 
 .nav{
-max-width:1180px;
-margin:auto;
-padding:15px 24px;
-display:flex;
-align-items:center;
-justify-content:space-between;
-gap:30px;
+    max-width:1180px;
+    margin:auto;
+    padding:14px 24px;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:30px;
 }
 
 .brand{
-display:flex;
-align-items:center;
-gap:12px;
-color:#fff;
+    display:flex;
+    align-items:center;
+    gap:12px;
+    color:#fff;
 }
 
 .brand-mark{
-width:40px;
-height:40px;
-border:1px solid rgba(210,173,85,.85);
-border-radius:50%;
-display:grid;
-place-items:center;
-color:var(--gold2);
-font-weight:700;
-:13px;
-letter-spacing:.5px;
-box-shadow:0 0 0 4px rgba(210,173,85,.06);
+    width:40px;
+    height:40px;
+
+    display:grid;
+    place-items:center;
+
+    border:1px solid rgba(234,208,138,.7);
+    border-radius:50%;
+
+    color:var(--gold2);
+    font-size:13px;
+    font-weight:700;
+    letter-spacing:.5px;
+
+    box-shadow:
+        0 0 0 4px rgba(234,208,138,.04),
+        0 0 20px rgba(234,208,138,.08);
 }
 
 .brand-title{
-font-weight:700;
-letter-spacing:1.4px;
-:14px;
+    font-size:14px;
+    font-weight:700;
+    letter-spacing:1.4px;
 }
 
 .brand-sub{
-:10px;
-color:#aebed0;
-letter-spacing:.8px;
+    color:#9fb0c2;
+    font-size:10px;
+    letter-spacing:.8px;
 }
 
 nav{
-display:flex;
-align-items:center;
-gap:27px;
+    display:flex;
+    align-items:center;
+    gap:27px;
 }
 
 nav a{
-position:relative;
-color:#e9eef5;
-:13px;
-transition:color .25s ease;
+    position:relative;
+
+    color:#e9eef5;
+    font-size:13px;
+
+    transition:.25s ease;
 }
 
 nav a::after{
-content:"";
-position:absolute;
-left:0;
-bottom:-7px;
-width:0;
-height:1px;
-background:var(--gold);
-transition:width .25s ease;
+    content:"";
+
+    position:absolute;
+    left:0;
+    bottom:-7px;
+
+    width:0;
+    height:1px;
+
+    background:var(--gold);
+
+    transition:width .25s ease;
 }
 
 nav a:hover{
-color:var(--gold2);
+    color:var(--gold2);
 }
 
 nav a:hover::after{
-width:100%;
+    width:100%;
 }
 
-/* =========================
+/* =========================================================
    HERO
-========================= */
+========================================================= */
 
 .hero{
-position:relative;
-overflow:hidden;
-background:
-radial-gradient(circle at 85% 20%,rgba(210,173,85,.14),transparent 28%),
-radial-gradient(circle at 15% 85%,rgba(56,111,165,.20),transparent 30%),
-linear-gradient(135deg,#0b1d35 0%,#14345a 58%,#1b436d 100%);
-color:#fff;
-padding:105px 24px 110px;
+    position:relative;
+    overflow:hidden;
+
+    color:#fff;
+
+    background:
+        radial-gradient(circle at 82% 18%,
+            rgba(53,217,255,.13),
+            transparent 28%),
+
+        radial-gradient(circle at 15% 85%,
+            rgba(28,140,255,.15),
+            transparent 30%),
+
+        linear-gradient(
+            135deg,
+            #071525 0%,
+            #0b2038 55%,
+            #102d4a 100%
+        );
+
+    padding:105px 24px 110px;
 }
 
 .hero::before{
-content:"";
-position:absolute;
-width:420px;
-height:420px;
-border:1px solid rgba(255,255,255,.06);
-border-radius:50%;
-right:-170px;
-top:-180px;
+    content:"";
+
+    position:absolute;
+
+    width:480px;
+    height:480px;
+
+    right:-230px;
+    top:-230px;
+
+    border:1px solid rgba(53,217,255,.10);
+    border-radius:50%;
 }
 
 .hero::after{
-content:"";
-position:absolute;
-width:300px;
-height:300px;
-border:1px solid rgba(210,173,85,.08);
-border-radius:50%;
-left:-150px;
-bottom:-180px;
+    content:"";
+
+    position:absolute;
+
+    width:340px;
+    height:340px;
+
+    left:-180px;
+    bottom:-190px;
+
+    border:1px solid rgba(210,173,85,.08);
+    border-radius:50%;
 }
 
 .hero-inner{
-position:relative;
-z-index:2;
-max-width:1120px;
-margin:auto;
-display:grid;
-grid-template-columns:1.15fr .85fr;
-align-items:center;
-gap:55px;
-text-align:left;
+    position:relative;
+    z-index:2;
+
+    max-width:1120px;
+    margin:auto;
+
+    display:grid;
+    grid-template-columns:1.1fr .9fr;
+
+    align-items:center;
+
+    gap:60px;
 }
 
 .hero-copy{
-position:relative;
-z-index:3;
-}
-
-.hero-visual{
-position:relative;
-min-height:300px;
-display:flex;
-align-items:center;
-justify-content:center;
-}
-
-.analytics-card{
-width:100%;
-max-width:400px;
-padding:26px;
-border:1px solid rgba(234,208,138,.18);
-border-radius:20px;
-background:
-linear-gradient(145deg,
-rgba(255,255,255,.075),
-rgba(255,255,255,.025));
-backdrop-filter:blur(18px);
--webkit-backdrop-filter:blur(18px);
-box-shadow:
-0 28px 70px rgba(0,0,0,.28),
-inset 0 1px 0 rgba(255,255,255,.08);
-transition:transform .4s ease,box-shadow .4s ease;
-}
-
-.analytics-card:hover{
-transform:translateY(-5px);
-box-shadow:
-0 35px 80px rgba(0,0,0,.34),
-0 0 35px rgba(210,173,85,.08);
-}
-
-.analytics-top{
-display:flex;
-justify-content:space-between;
-align-items:center;
-margin-bottom:20px;
-}
-
-.analytics-title{
-:11px;
-letter-spacing:1.8px;
-text-transform:uppercase;
-color:#d7e0eb;
-font-weight:600;
-}
-
-.analytics-dot{
-width:8px;
-height:8px;
-border-radius:50%;
-background:var(--gold2);
-box-shadow:
-0 0 0 4px rgba(234,208,138,.08),
-0 0 16px rgba(234,208,138,.6);
-}
-
-.chart{
-height:150px;
-position:relative;
-overflow:hidden;
-border-bottom:1px solid rgba(255,255,255,.12);
-border-top:1px solid rgba(255,255,255,.04);
-}
-
-.chart::before{
-content:"";
-position:absolute;
-inset:0;
-background:
-linear-gradient(rgba(255,255,255,.045) 1px,transparent 1px),
-linear-gradient(90deg,rgba(255,255,255,.045) 1px,transparent 1px);
-background-size:45px 37px;
-}
-
-.chart-line{
-position:absolute;
-left:3%;
-right:3%;
-bottom:30px;
-height:82px;
-border-top:2px solid var(--gold);
-transform:skewY(-9deg) rotate(-1deg);
-filter:drop-shadow(0 0 6px rgba(210,173,85,.32));
-}
-
-.chart-line::before{
-content:"";
-position:absolute;
-left:22%;
-top:-5px;
-width:7px;
-height:7px;
-border-radius:50%;
-background:var(--gold2);
-box-shadow:0 0 12px rgba(234,208,138,.65);
-}
-
-.chart-line::after{
-content:"";
-position:absolute;
-right:0;
-top:-5px;
-width:9px;
-height:9px;
-border-radius:50%;
-background:var(--gold2);
-box-shadow:0 0 16px rgba(234,208,138,.75);
-}
-
-.analytics-bottom{
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:10px;
-margin-top:18px;
-}
-
-.mini-stat{
-padding:10px 9px;
-border-left:1px solid rgba(255,255,255,.12);
-}
-
-.mini-stat strong{
-display:block;
-color:#f4f7fa;
-:14px;
-font-weight:600;
-}
-
-.mini-stat span{
-display:block;
-margin-top:3px;
-:9px;
-color:#94a7bc;
-text-transform:uppercase;
-letter-spacing:.7px;
+    position:relative;
+    z-index:3;
 }
 
 .kicker{
-display:inline-flex;
-align-items:center;
-gap:9px;
-color:var(--gold2);
-:11px;
-letter-spacing:2.4px;
-text-transform:uppercase;
-font-weight:700;
-margin-bottom:5px;
-transform:translateY(-10px);   
+    display:inline-flex;
+    align-items:center;
+    gap:9px;
+
+    margin-bottom:17px;
+
+    color:#9db0c4;
+
+    font-size:11px;
+    font-weight:700;
+
+    letter-spacing:2px;
+    text-transform:uppercase;
 }
 
-.kicker::before,
-.kicker::after{
-content:"";
-width:28px;
-height:1px;
-background:rgba(234,208,138,.65);
+.kicker::before{
+    content:"";
+
+    width:27px;
+    height:1px;
+
+    background:var(--gold);
 }
 
 .hero h1{
-:clamp(48px,5vw,60px);
-.main-title{
-font-size:64px !important;
-}   
-line-height:1.05;
-letter-spacing:1.5px;
-margin:10px 0 13px;
-font-weight:800;
+    font-size:clamp(42px,6vw,67px);
+    line-height:1.02;
+
+    letter-spacing:-2px;
+
+    margin-bottom:16px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #fff,
+            #d8e8f7
+        );
+
+    -webkit-background-clip:text;
+    background-clip:text;
+
+    color:transparent;
 }
 
 .hero h2{
-font-size:16px;
-font-weight:400;
-letter-spacing:.5px;
-color:#dce6f1;
-margin-bottom:25px;
+    color:var(--gold2);
+
+    font-size:18px;
+    font-weight:500;
+
+    letter-spacing:.7px;
+
+    margin-bottom:22px;
 }
 
 .hero p{
-max-width:770px;
-margin:auto;
-color:#cbd8e6;
-:16px;
+    max-width:650px;
+
+    color:#c0ccda;
+
+    font-size:15px;
 }
 
 .hero-actions{
-margin-top:32px;
-display:flex;
-justify-content:center;
-align-items:center;
-gap:10px;
-flex-wrap:wrap;
+    display:flex;
+    gap:12px;
+
+    margin-top:29px;
 }
 
 .btn{
-display:inline-flex;
-align-items:center;
-justify-content:center;
-padding:13px 23px;
-min-height:47px;
-border-radius:7px;
-background:linear-gradient(135deg,var(--gold),#b9913b);
-color:#14243b;
-font-weight:700;
-:13px;
-border:1px solid rgba(255,255,255,.06);
-box-shadow:0 10px 25px rgba(0,0,0,.14);
-transition:transform .25s ease,box-shadow .25s ease,filter .25s ease;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+
+    padding:12px 19px;
+
+    border:1px solid rgba(234,208,138,.5);
+    border-radius:9px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(210,173,85,.95),
+            rgba(234,208,138,.92)
+        );
+
+    color:#08182b;
+
+    font-size:12px;
+    font-weight:700;
+
+    letter-spacing:.3px;
+
+    box-shadow:
+        0 8px 25px rgba(210,173,85,.13);
+
+    transition:
+        transform .3s ease,
+        box-shadow .3s ease;
 }
 
 .btn:hover{
-transform:translateY(-2px);
-box-shadow:0 15px 30px rgba(0,0,0,.20);
-filter:brightness(1.05);
+    transform:translateY(-2px);
+
+    box-shadow:
+        0 12px 30px rgba(210,173,85,.22);
 }
 
 .btn.secondary{
-background:rgba(255,255,255,.04);
-color:#fff;
-border:1px solid rgba(255,255,255,.28);
-box-shadow:none;
+    background:rgba(255,255,255,.035);
+    color:#fff;
+
+    border-color:rgba(255,255,255,.20);
+
+    box-shadow:none;
 }
 
 .btn.secondary:hover{
-background:rgba(255,255,255,.09);
+    background:rgba(255,255,255,.08);
 }
-<section class="intel-section">
 
-<div class="intel-container">
+/* =========================================================
+   HERO ANALYTICS CARD
+========================================================= */
 
-<div class="intel-heading">
+.hero-visual{
+    min-height:330px;
 
-<div>
-<span class="eyebrow">Economic Intelligence</span>
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
 
-<h2>
-Lecture des principales dynamiques économiques
-</h2>
+.analytics-card{
+    position:relative;
 
-<p>
-Un espace dédié au suivi et à l'interprétation des indicateurs économiques,
-financiers et statistiques.
-</p>
-</div>
+    width:100%;
+    max-width:420px;
 
-<div class="intel-status">
-<span></span>
-Data Analysis
-</div>
+    padding:27px;
 
-</div>
+    overflow:hidden;
 
+    border:1px solid rgba(53,217,255,.17);
+    border-radius:20px;
 
-<div class="intel-grid">
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.075),
+            rgba(255,255,255,.025)
+        );
 
-<div class="intel-card intel-main">
+    backdrop-filter:blur(18px);
+    -webkit-backdrop-filter:blur(18px);
 
-<div class="intel-card-head">
+    box-shadow:
+        0 30px 80px rgba(0,0,0,.30),
+        0 0 35px rgba(53,217,255,.04);
 
-<div>
-<span class="intel-label">ANALYTICAL VIEW</span>
-<h3>Economic Trends</h3>
-</div>
+    transition:.4s ease;
+}
 
-<div class="intel-symbol">↗</div>
+.analytics-card:hover{
+    transform:translateY(-6px);
 
-</div>
+    border-color:rgba(53,217,255,.30);
 
-<div class="intel-chart">
+    box-shadow:
+        0 35px 90px rgba(0,0,0,.34),
+        0 0 40px rgba(53,217,255,.08);
+}
 
-<div class="chart-grid"></div>
+.analytics-card::before{
+    content:"";
 
-<div class="trend-line">
-<span class="point p1"></span>
-<span class="point p2"></span>
-<span class="point p3"></span>
-<span class="point p4"></span>
-<span class="point p5"></span>
-<span class="point p6"></span>
-</div>
+    position:absolute;
 
-</div>
+    width:180px;
+    height:180px;
 
-<div class="intel-footer">
-<span>Macro indicators</span>
-<span>Trend analysis</span>
-<span>Statistical reading</span>
-</div>
+    right:-90px;
+    top:-90px;
 
-</div>
+    border:1px solid rgba(53,217,255,.10);
+    border-radius:50%;
+}
 
+.analytics-top{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
 
-<div class="intel-side">
+    margin-bottom:20px;
+}
 
-<div class="intel-mini">
-<span class="mini-label">01</span>
-<strong>Macro</strong>
-<p>Conjoncture économique</p>
-</div>
+.analytics-title{
+    color:#d6e2ee;
 
-<div class="intel-mini">
-<span class="mini-label">02</span>
-<strong>Finance</strong>
-<p>Performance & risques</p>
-</div>
+    font-size:10px;
+    font-weight:700;
 
-<div class="intel-mini">
-<span class="mini-label">03</span>
-<strong>Public Finance</strong>
-<p>Budget & dette</p>
-</div>
+    letter-spacing:1.8px;
+    text-transform:uppercase;
+}
 
-<div class="intel-mini">
-<span class="mini-label">04</span>
-<strong>Data</strong>
-<p>Indicateurs & statistiques</p>
-</div>
+.analytics-dot{
+    width:8px;
+    height:8px;
 
-</div>
+    border-radius:50%;
 
-</div>
+    background:var(--cyan);
 
-</div>
+    box-shadow:
+        0 0 0 4px rgba(53,217,255,.08),
+        0 0 18px rgba(53,217,255,.8);
+}
 
-</section>
-/* =========================
-   CONTAINERS
-========================= */
+.chart{
+    position:relative;
+
+    height:160px;
+
+    overflow:hidden;
+
+    border-top:1px solid rgba(255,255,255,.05);
+    border-bottom:1px solid rgba(255,255,255,.10);
+
+    background:
+        repeating-linear-gradient(
+            to bottom,
+            transparent 0,
+            transparent 39px,
+            rgba(255,255,255,.045) 40px
+        );
+}
+
+.chart::before{
+    content:"";
+
+    position:absolute;
+
+    left:0;
+    right:0;
+    bottom:26px;
+
+    height:2px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            var(--cyan),
+            #79a8ff,
+            transparent
+        );
+
+    transform:
+        rotate(-8deg)
+        translateY(-10px);
+
+    box-shadow:
+        0 0 12px rgba(53,217,255,.35);
+}
+
+.chart::after{
+    content:"";
+
+    position:absolute;
+
+    width:10px;
+    height:10px;
+
+    right:22%;
+    top:43%;
+
+    border-radius:50%;
+
+    background:var(--cyan);
+
+    box-shadow:
+        0 0 0 5px rgba(53,217,255,.08),
+        0 0 18px rgba(53,217,255,.65);
+}
+
+.analytics-bottom{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+
+    gap:10px;
+
+    margin-top:19px;
+}
+
+.mini-stat{
+    padding:12px 9px;
+
+    border:1px solid rgba(255,255,255,.07);
+    border-radius:10px;
+
+    background:rgba(255,255,255,.025);
+}
+
+.mini-stat strong{
+    display:block;
+
+    color:#fff;
+
+    font-size:12px;
+}
+
+.mini-stat span{
+    display:block;
+
+    margin-top:2px;
+
+    color:#8ea1b5;
+
+    font-size:9px;
+
+    letter-spacing:.5px;
+}
+
+/* =========================================================
+   GENERAL SECTIONS
+========================================================= */
 
 .container{
-max-width:1120px;
-margin:auto;
-padding:82px 40px;
+    max-width:1120px;
+
+    margin:auto;
+
+    padding:82px 40px;
 }
 
 .section-head{
-margin-top:25px;   
-margin-bottom:32px;
-padding-left:18px;
-padding-right:18px;
+    margin-bottom:34px;
 }
 
 .section-head .eyebrow{
-display:inline-block;
-color:#9a792d;
-:11px;
-letter-spacing:2px;
-text-transform:uppercase;
-font-weight:700;
-margin-bottom:4px;
+    display:inline-block;
+
+    margin-bottom:5px;
+
+    color:#98782d;
+
+    font-size:11px;
+    font-weight:700;
+
+    letter-spacing:2px;
+    text-transform:uppercase;
 }
 
 .section-head h2{
-:clamp(27px,4vw,34px);
-line-height:1.2;
-color:var(--navy);
-margin-top:3px;
-letter-spacing:-.3px;
+    color:var(--navy);
+
+    font-size:clamp(28px,4vw,36px);
+
+    line-height:1.2;
+
+    letter-spacing:-.5px;
 }
 
 .section-head p{
-color:var(--muted);
-max-width:700px;
-margin-top:8px;
-:15px;
+    max-width:700px;
+
+    margin-top:9px;
+
+    color:var(--muted);
+
+    font-size:14px;
 }
-/* =========================
-   ECONOMIC INTELLIGENCE
-========================= */
+
+/* =========================================================
+   DOMAIN CARDS
+========================================================= */
+
+.domain-grid{
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:20px;
+}
+
+.domain-card{
+    position:relative;
+
+    min-height:275px;
+
+    padding:29px;
+
+    overflow:hidden;
+
+    border:1px solid rgba(15,48,76,.11);
+    border-radius:18px;
+
+    background:#fff;
+
+    box-shadow:
+        0 12px 35px rgba(7,21,37,.06);
+
+    transition:
+        transform .35s ease,
+        border-color .35s ease,
+        box-shadow .35s ease;
+}
+
+.domain-card::before{
+    content:"";
+
+    position:absolute;
+
+    left:0;
+    top:0;
+
+    width:100%;
+    height:2px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(53,217,255,.8),
+            rgba(210,173,85,.7),
+            transparent
+        );
+
+    opacity:.55;
+
+    transition:opacity .35s ease;
+}
+
+.domain-card::after{
+    content:"";
+
+    position:absolute;
+
+    width:170px;
+    height:170px;
+
+    right:-95px;
+    bottom:-105px;
+
+    border:1px solid rgba(28,140,255,.08);
+    border-radius:50%;
+
+    transition:.4s ease;
+}
+
+.domain-card:hover{
+    transform:translateY(-7px);
+
+    border-color:rgba(28,140,255,.28);
+
+    box-shadow:
+        0 22px 50px rgba(7,21,37,.11),
+        0 0 28px rgba(28,140,255,.055);
+}
+
+.domain-card:hover::before{
+    opacity:1;
+}
+
+.domain-card:hover::after{
+    transform:scale(1.35);
+}
+
+.domain-top{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+.domain-number{
+    color:#b8c5d1;
+
+    font-size:11px;
+    font-weight:700;
+
+    letter-spacing:1.5px;
+}
+
+.domain-status{
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
+
+    color:#718196;
+
+    font-size:9px;
+    font-weight:700;
+
+    letter-spacing:1px;
+    text-transform:uppercase;
+}
+
+.domain-status::before{
+    content:"";
+
+    width:6px;
+    height:6px;
+
+    border-radius:50%;
+
+    background:#57a878;
+
+    box-shadow:
+        0 0 8px rgba(87,168,120,.5);
+}
+
+.domain-icon{
+    width:47px;
+    height:47px;
+
+    margin:23px 0 18px;
+
+    display:grid;
+    place-items:center;
+
+    border:1px solid rgba(28,140,255,.18);
+    border-radius:13px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(28,140,255,.09),
+            rgba(53,217,255,.025)
+        );
+
+    color:#1977c9;
+
+    font-size:20px;
+
+    transition:.35s ease;
+}
+
+.domain-card:hover .domain-icon{
+    transform:
+        translateY(-3px)
+        rotate(3deg);
+
+    border-color:rgba(53,217,255,.45);
+
+    box-shadow:
+        0 0 22px rgba(53,217,255,.09);
+}
+
+.domain-card h3{
+    color:var(--navy);
+
+    font-size:21px;
+
+    margin-bottom:9px;
+}
+
+.domain-card p{
+    position:relative;
+    z-index:2;
+
+    max-width:450px;
+
+    color:var(--muted);
+
+    font-size:13.5px;
+}
+
+.domain-footer{
+    position:absolute;
+
+    left:29px;
+    right:29px;
+    bottom:25px;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    gap:15px;
+}
+
+.domain-type{
+    color:#8a98a8;
+
+    font-size:9px;
+    font-weight:700;
+
+    letter-spacing:1px;
+    text-transform:uppercase;
+}
+
+.domain-link{
+    color:#176da9;
+
+    font-size:11px;
+    font-weight:700;
+
+    transition:.25s ease;
+}
+
+.domain-link:hover{
+    color:#0a9ac4;
+    transform:translateX(3px);
+}
+
+/* =========================================================
+   INTELLIGENCE SECTION
+========================================================= */
 
 .intel-section{
-background:#eef2f6;
-border-top:1px solid #e3e8ee;
-border-bottom:1px solid #e3e8ee;
+    position:relative;
+
+    overflow:hidden;
+
+    background:
+        linear-gradient(
+            135deg,
+            #edf2f6,
+            #f7f9fb
+        );
+
+    border-top:1px solid #e1e7ed;
+    border-bottom:1px solid #e1e7ed;
 }
 
 .intel-container{
-max-width:1120px;
-margin:auto;
-padding:78px 24px;
+    max-width:1120px;
+
+    margin:auto;
+
+    padding:78px 40px;
 }
 
 .intel-heading{
-display:flex;
-justify-content:space-between;
-align-items:flex-end;
-gap:30px;
-margin-bottom:30px;
+    display:flex;
+
+    align-items:flex-end;
+    justify-content:space-between;
+
+    gap:30px;
+
+    margin-bottom:30px;
 }
 
 .intel-heading h2{
-color:var(--navy);
-:clamp(25px,3.5vw,32px);
-line-height:1.25;
-margin:5px 0 8px;
+    color:var(--navy);
+
+    font-size:clamp(25px,3.5vw,32px);
+
+    line-height:1.25;
+
+    margin:5px 0 8px;
 }
 
 .intel-heading p{
-color:var(--muted);
-:14px;
-max-width:650px;
+    max-width:650px;
+
+    color:var(--muted);
+
+    font-size:14px;
 }
 
 .intel-status{
-display:flex;
-align-items:center;
-gap:9px;
-padding:9px 13px;
-border:1px solid #dce3ea;
-background:#fff;
-border-radius:30px;
-:10px;
-font-weight:700;
-letter-spacing:1px;
-text-transform:uppercase;
-color:#66758a;
-white-space:nowrap;
+    display:flex;
+    align-items:center;
+
+    gap:8px;
+
+    padding:9px 13px;
+
+    border:1px solid #dbe3ea;
+    border-radius:30px;
+
+    background:#fff;
+
+    color:#68798b;
+
+    font-size:9px;
+    font-weight:700;
+
+    letter-spacing:1px;
+    text-transform:uppercase;
+
+    white-space:nowrap;
 }
 
 .intel-status span{
-width:7px;
-height:7px;
-border-radius:50%;
-background:#8aa36b;
-box-shadow:0 0 10px rgba(138,163,107,.5);
+    width:7px;
+    height:7px;
+
+    border-radius:50%;
+
+    background:#55a977;
+
+    box-shadow:
+        0 0 10px rgba(85,169,119,.45);
 }
 
 .intel-grid{
-display:grid;
-grid-template-columns:1.65fr .75fr;
-gap:18px;
+    display:grid;
+
+    grid-template-columns:1.65fr .75fr;
+
+    gap:18px;
 }
 
 .intel-card{
-background:var(--navy);
-border-radius:15px;
-border:1px solid rgba(255,255,255,.07);
-box-shadow:0 18px 45px rgba(11,29,53,.12);
+    border-radius:17px;
+
+    background:var(--navy);
+
+    border:1px solid rgba(255,255,255,.07);
+
+    box-shadow:
+        0 18px 45px rgba(7,21,37,.13);
 }
 
 .intel-main{
-padding:31px;
-overflow:hidden;
-}
+    padding:31px;
 
-.intel-card-head{
-display:flex;
-justify-content:space-between;
-align-items:flex-start;
-}
-
-.intel-label{
-:9px;
-letter-spacing:1.8px;
-color:#9eafc2;
-}
-
-.intel-card h3{
-color:#fff;
-:22px;
-margin-top:5px;
-}
-
-.intel-symbol{
-width:38px;
-height:38px;
-border:1px solid rgba(210,173,85,.3);
-border-radius:10px;
-display:grid;
-place-items:center;
-color:var(--gold2);
-:18px;
-}
-
-.intel-chart{
-height:190px;
-margin-top:28px;
-position:relative;
-overflow:hidden;
-border-bottom:1px solid rgba(255,255,255,.12);
-}
-
-.chart-grid{
-position:absolute;
-inset:0;
-background:
-linear-gradient(rgba(255,255,255,.045) 1px,transparent 1px),
-linear-gradient(90deg,rgba(255,255,255,.045) 1px,transparent 1px);
-background-size:55px 38px;
-}
-
-.trend-line{
-position:absolute;
-left:2%;
-right:2%;
-bottom:40px;
-height:100px;
-border-top:2px solid var(--gold);
-transform:skewY(-8deg) rotate(-1deg);
-filter:drop-shadow(0 0 7px rgba(210,173,85,.28));
-}
-
-.point{
-position:absolute;
-width:8px;
-height:8px;
-border-radius:50%;
-background:var(--gold2);
-box-shadow:0 0 13px rgba(234,208,138,.65);
-}
-
-.p1{left:5%;top:72px;}
-.p2{left:22%;top:57px;}
-.p3{left:39%;top:65px;}
-.p4{left:56%;top:35px;}
-.p5{left:74%;top:45px;}
-.p6{right:2%;top:12px;}
-
-.intel-footer{
-display:flex;
-gap:22px;
-margin-top:17px;
-:9px;
-text-transform:uppercase;
-letter-spacing:.7px;
-color:#91a4b8;
-}
-
-.intel-side{
-display:grid;
-grid-template-columns:1fr;
-gap:1px;
-background:#dce3ea;
-border-radius:15px;
-overflow:hidden;
-box-shadow:0 12px 35px rgba(11,29,53,.07);
-}
-
-.intel-mini{
-background:#fff;
-padding:22px;
-transition:background .25s ease,transform .25s ease;
-}
-
-.intel-mini:hover{
-background:#fbfcfd;
-transform:translateX(3px);
-}
-
-.mini-label{
-:9px;
-color:#a58232;
-font-weight:700;
-letter-spacing:1px;
-}
-
-.intel-mini strong{
-display:block;
-:17px;
-color:var(--navy);
-margin-top:4px;
-}
-
-.intel-mini p{
-:11px;
-color:var(--muted);
-margin-top:2px;
-}
-/* =========================
-   CARDS
-========================= */
-
-.grid{
-display:grid;
-grid-template-columns:repeat(4,1fr);
-gap:18px;
-}
-
-.card{
-position:relative;
-overflow:hidden;
-background:rgba(255,255,255,.96);
-border:1px solid var(--line);
-border-radius:13px;
-padding:29px 26px;
-box-shadow:var(--shadow);
-transition:transform .3s ease,box-shadow .3s ease,border-color .3s ease;
-}
-
-.card::before{
-content:"";
-position:absolute;
-left:0;
-top:0;
-width:100%;
-height:3px;
-background:linear-gradient(90deg,var(--gold),transparent);
-opacity:.55;
-}
-
-.card:hover{
-transform:translateY(-6px);
-box-shadow:var(--shadow-hover);
-border-color:#d8dee7;
-}
-
-.card .num{
-:11px;
-letter-spacing:1.5px;
-color:#aa8530;
-font-weight:700;
-}
-
-.card h3{
-color:var(--navy);
-margin:10px 0 10px;
-:18px;
-}
-
-.card p{
-color:var(--muted);
-:13.5px;
-}
-.card-icon{
-width:42px;
-height:42px;
-margin:16px 0 15px;
-display:grid;
-place-items:center;
-border:1px solid rgba(210,173,85,.28);
-border-radius:11px;
-background:linear-gradient(
-145deg,
-rgba(210,173,85,.12),
-rgba(210,173,85,.035)
-);
-color:var(--gold);
-:19px;
-transition:
-transform .3s ease,
-background .3s ease,
-border-color .3s ease;
-}
-
-.card:hover .card-icon{
-transform:translateY(-3px) rotate(3deg);
-background:rgba(210,173,85,.16);
-border-color:rgba(210,173,85,.55);
-}
-/* =========================
-   FEATURE
-========================= */
-
-.feature{
-background:#fff;
-border:1px solid var(--line);
-border-radius:14px;
-display:grid;
-grid-template-columns:1.55fr .75fr;
-overflow:hidden;
-box-shadow:var(--shadow);
-}
-
-.feature-main{
-padding:42px;
-}
-
-.feature-tag{
-display:inline-block;
-background:#f7f0df;
-color:#80631f;
-border:1px solid #eee1c3;
-border-radius:30px;
-padding:6px 12px;
-:11px;
-letter-spacing:.7px;
-font-weight:700;
-}
-
-.feature h3{
-:clamp(23px,3vw,29px);
-line-height:1.3;
-color:var(--navy);
-margin:17px 0 12px;
-}
-
-.feature p{
-color:var(--muted);
-max-width:720px;
-:14px;
-}
-
-.feature .btn{
-margin-top:25px;
-}
-
-.feature-side{
-position:relative;
-overflow:hidden;
-background:linear-gradient(150deg,#102b4b,#0b1d35);
-color:#fff;
-padding:40px;
-display:flex;
-flex-direction:column;
-justify-content:center;
-}
-
-.feature-side::before{
-content:"";
-position:absolute;
-width:230px;
-height:230px;
-border:1px solid rgba(210,173,85,.12);
-border-radius:50%;
-right:-100px;
-top:-80px;
-}
-
-.stat{
-position:relative;
-z-index:2;
-padding:16px 0;
-border-bottom:1px solid rgba(255,255,255,.13);
-}
-
-.stat:last-child{
-border-bottom:0;
-}
-
-.stat strong{
-display:block;
-:25px;
-color:var(--gold2);
-letter-spacing:.3px;
-}
-
-.stat span{
-:11px;
-color:#aebed0;
-letter-spacing:.4px;
-}
-
-/* =========================
-   ABOUT
-========================= */
-
-.about{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:18px;
-}
-
-.panel{
-background:#fff;
-border:1px solid var(--line);
-border-radius:13px;
-padding:32px;
-box-shadow:0 10px 30px rgba(16,35,63,.05);
-transition:transform .3s ease,box-shadow .3s ease;
-}
-
-.panel:hover{
-transform:translateY(-4px);
-box-shadow:var(--shadow);
-}
-
-.panel h3{
-color:var(--navy);
-margin-bottom:10px;
-:19px;
-}
-
-.panel p{
-color:var(--muted);
-font-size:14px;
-}
-
-/* =========================
-   FOOTER
-========================= */
-
-footer{
-background:#08182b;
-color:#bdc9d7;
-text-align:center;
-padding:40px 24px;
-border-top:1px solid rgba(255,255,255,.05);
-}
-
-footer strong{
-color:#fff;
-letter-spacing:.7px;
-}
-
-footer small{
-display:block;
-margin-top:8px;
-color:#8092a8;
-font-size:11px;
-letter-spacing:.4px;
-}
-
-/* =========================
-   REVEAL ANIMATION
-========================= */
-
-@keyframes fadeUp{
-from{
-opacity:0;
-transform:translateY(14px);
-}
-to{
-opacity:1;
-transform:translateY(0);
-}
-}
-
-.hero-inner{
-animation:fadeUp .8s ease both;
-}
-
-.card,
-.feature,
-.panel{
-animation:fadeUp .7s ease both;
-}
-
-/* =========================
-   MOBILE
-========================= */
-
-@media(max-width:900px){
-
-.grid{
-grid-template-columns:repeat(2,1fr);
-}
-
-.feature,
-.about{
-grid-template-columns:1fr;
-}
-
-nav{
-gap:16px;
-}
-.hero-visual{
-    width:100%;
     overflow:hidden;
 }
 
-.analytics-card{
-    width:100%;
-    max-width:100%;
-    box-sizing:border-box;
-}
-}
-
-@media(max-width:650px){  
-.hero-inner{
+.intel-card-head{
     display:flex;
-    flex-direction:column;
-    width:100%;
-    box-sizing:border-box;
+
+    align-items:flex-start;
+    justify-content:space-between;
 }
 
-.hero-copy{
-    width:100%;
-    box-sizing:border-box;
-}
-.kicker{
-    font-size:13px;
-    white-space:nowrap;
-}
-.hero-visual{
-    width:100%;
-    max-width:100%;
-    box-sizing:border-box;
-    margin-top:30px;
+.intel-label{
+    color:#8ea3b7;
+
+    font-size:9px;
+    font-weight:700;
+
+    letter-spacing:1.8px;
 }
 
-.analytics-card{
-    width:100%;
-    max-width:100%;
-    box-sizing:border-box;
-}
-.nav{
-padding:14px 18px;
-align-items:flex-start;
-gap:13px;
-flex-direction:column;
+.intel-card h3{
+    color:#fff;
+
+    font-size:22px;
+
+    margin-top:5px;
 }
 
-nav{
-width:100%;
-gap:10px 17px;
-flex-wrap:wrap;
-}
+.intel-symbol{
+    color:var(--cyan);
 
-nav a{
-font-size:12px;
-}
+    font-size:23px;
 
-.hero{
-padding:78px 20px 85px;
-}
-
-.hero h1{
-font-size:39px;
-letter-spacing:.5px;
-}
-.main-title{
-    text-align:center;
-    font-size:30px !important;
-    font-weight:500;
-}
-.hero h2{
-font-size:17px;
-text-align:center;   
-}
-
-.hero p{
-font-size:14px;
-}
-
-.hero-actions{
-flex-direction:column;
-width:100%;
-}
-
-.hero-actions .btn{
-width:100%;
-max-width:280px;
-}
-
-.container{
-padding:55px 18px;
-}
-
-.grid{
-grid-template-columns:1fr;
-}
-
-.card{
-padding:20px;
-}
-
-.feature-main,
-.feature-side{
-padding:30px 25px;
-}
-
-.about{
-gap:16px;
-}
-
-.panel{
-padding:27px 24px;
-}
-.intel-heading{
-align-items:flex-start;
-flex-direction:column;
-}
-
-.intel-grid{
-grid-template-columns:1fr;
-}
-
-.intel-main{
-padding:22px 18px;
+    text-shadow:
+        0 0 15px rgba(53,217,255,.5);
 }
 
 .intel-chart{
-height:160px;
+    position:relative;
+
+    height:185px;
+
+    margin-top:25px;
+
+    overflow:hidden;
+
+    border-bottom:1px solid rgba(255,255,255,.12);
+
+    background:
+        repeating-linear-gradient(
+            to bottom,
+            transparent 0,
+            transparent 45px,
+            rgba(255,255,255,.045) 46px
+        ),
+        repeating-linear-gradient(
+            to right,
+            transparent 0,
+            transparent 80px,
+            rgba(255,255,255,.035) 81px
+        );
 }
+
+.trend-line{
+    position:absolute;
+
+    left:3%;
+    right:3%;
+
+    top:48%;
+
+    height:2px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #1c8cff,
+            #35d9ff,
+            #8ab7ff
+        );
+
+    transform:
+        rotate(-7deg)
+        skewX(-10deg);
+
+    box-shadow:
+        0 0 13px rgba(53,217,255,.4);
+}
+
+.point{
+    position:absolute;
+
+    width:8px;
+    height:8px;
+
+    border-radius:50%;
+
+    background:var(--cyan);
+
+    box-shadow:
+        0 0 0 4px rgba(53,217,255,.08),
+        0 0 15px rgba(53,217,255,.7);
+}
+
+.p1{left:5%;top:-3px;}
+.p2{left:24%;top:13px;}
+.p3{left:42%;top:-8px;}
+.p4{left:58%;top:-2px;}
+.p5{left:76%;top:-25px;}
+.p6{left:94%;top:-37px;}
 
 .intel-footer{
-flex-wrap:wrap;
-gap:8px 12px;
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:10px 20px;
+
+    margin-top:18px;
+
+    color:#8fa1b3;
+
+    font-size:9px;
+    font-weight:700;
+
+    letter-spacing:.7px;
+    text-transform:uppercase;
 }
+
+.intel-side{
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:1px;
+
+    overflow:hidden;
+
+    border-radius:17px;
+
+    background:rgba(7,21,37,.08);
+}
+
+.intel-mini{
+    padding:24px 20px;
+
+    background:#fff;
+
+    transition:.3s ease;
+}
+
+.intel-mini:hover{
+    background:#f8fbfd;
+}
+
+.mini-label{
+    display:block;
+
+    color:#a7b4c1;
+
+    font-size:9px;
+    font-weight:700;
+
+    letter-spacing:1px;
+
+    margin-bottom:8px;
+}
+
+.intel-mini strong{
+    display:block;
+
+    color:var(--navy);
+
+    font-size:15px;
+}
+
+.intel-mini p{
+    margin-top:3px;
+
+    color:#748397;
+
+    font-size:10px;
+}
+
+/* =========================================================
+   PUBLICATION
+========================================================= */
+
+.feature{
+    display:grid;
+
+    grid-template-columns:1.55fr .75fr;
+
+    overflow:hidden;
+
+    border:1px solid var(--line);
+    border-radius:17px;
+
+    background:#fff;
+
+    box-shadow:var(--shadow);
+}
+
+.feature-main{
+    padding:42px;
+}
+
+.feature-tag{
+    display:inline-block;
+
+    padding:6px 12px;
+
+    border:1px solid #eadfca;
+    border-radius:30px;
+
+    background:#faf5e9;
+
+    color:#80631f;
+
+    font-size:10px;
+    font-weight:700;
+
+    letter-spacing:.8px;
+}
+
+.feature h3{
+    color:var(--navy);
+
+    font-size:clamp(22px,3vw,29px);
+
+    line-height:1.3;
+
+    margin:17px 0 12px;
+}
+
+.feature p{
+    max-width:720px;
+
+    color:var(--muted);
+
+    font-size:14px;
+}
+
+.feature .btn{
+    margin-top:25px;
+}
+
+.feature-side{
+    position:relative;
+
+    overflow:hidden;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+
+    padding:40px;
+
+    color:#fff;
+
+    background:
+        linear-gradient(
+            150deg,
+            #102d4a,
+            #071525
+        );
+}
+
+.feature-side::before{
+    content:"";
+
+    position:absolute;
+
+    width:230px;
+    height:230px;
+
+    right:-100px;
+    top:-80px;
+
+    border:1px solid rgba(53,217,255,.10);
+    border-radius:50%;
+}
+
+.stat{
+    position:relative;
+    z-index:2;
+
+    padding:16px 0;
+
+    border-bottom:1px solid rgba(255,255,255,.12);
+}
+
+.stat:last-child{
+    border-bottom:0;
+}
+
+.stat strong{
+    display:block;
+
+    color:var(--gold2);
+
+    font-size:25px;
+
+    letter-spacing:.3px;
+}
+
+.stat span{
+    color:#9eb0c2;
+
+    font-size:11px;
+
+    letter-spacing:.4px;
+}
+
+/* =========================================================
+   ABOUT
+========================================================= */
+
+.about{
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:18px;
+}
+
+.panel{
+    padding:32px;
+
+    border:1px solid var(--line);
+    border-radius:15px;
+
+    background:#fff;
+
+    box-shadow:
+        0 10px 30px rgba(16,35,63,.05);
+
+    transition:.3s ease;
+}
+
+.panel:hover{
+    transform:translateY(-4px);
+
+    box-shadow:var(--shadow);
+}
+
+.panel h3{
+    color:var(--navy);
+
+    font-size:19px;
+
+    margin-bottom:10px;
+}
+
+.panel p{
+    color:var(--muted);
+
+    font-size:14px;
+}
+
+.contact{
+    margin-top:22px;
+
+    padding-top:18px;
+
+    border-top:1px solid var(--line);
+}
+
+.contact-title{
+    margin-bottom:9px;
+
+    color:var(--text);
+
+    font-size:13px;
+    font-weight:700;
+}
+
+.contact p{
+    font-size:13px;
+    line-height:2;
+}
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer{
+    padding:40px 24px;
+
+    border-top:1px solid rgba(255,255,255,.05);
+
+    background:#061321;
+
+    color:#aebdcd;
+
+    text-align:center;
+}
+
+footer strong{
+    color:#fff;
+
+    letter-spacing:.7px;
+}
+
+footer small{
+    display:block;
+
+    margin-top:8px;
+
+    color:#72859a;
+
+    font-size:10px;
+
+    letter-spacing:.4px;
+}
+
+/* =========================================================
+   ANIMATIONS
+========================================================= */
+
+@keyframes fadeUp{
+
+    from{
+        opacity:0;
+        transform:translateY(16px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+.hero-copy{
+    animation:fadeUp .8s ease both;
+}
+
 .hero-visual{
-width:100%;
-min-width:0;
+    animation:fadeUp .9s .08s ease both;
 }
 
-.analytics-card{
-width:100%;
-max-width:100%;
-box-sizing:border-box;
-}
-.hero::before{
-  display:none;
-}
-.section-head{
-    margin-top:0;
-}   
+.domain-card{
+    animation:fadeUp .7s ease both;
 }
 
-/* ACCESSIBILITY */
+.domain-card:nth-child(2){
+    animation-delay:.08s;
+}
+
+.domain-card:nth-child(3){
+    animation-delay:.16s;
+}
+
+.domain-card:nth-child(4){
+    animation-delay:.24s;
+}
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media(max-width:900px){
+
+    .nav{
+        gap:20px;
+    }
+
+    nav{
+        gap:17px;
+    }
+
+    .hero-inner{
+        grid-template-columns:1fr;
+    }
+
+    .hero-copy{
+        text-align:center;
+    }
+
+    .hero p{
+        margin:auto;
+    }
+
+    .hero-actions{
+        justify-content:center;
+    }
+
+    .hero-visual{
+        width:100%;
+    }
+
+    .analytics-card{
+        max-width:520px;
+    }
+
+    .intel-grid{
+        grid-template-columns:1fr;
+    }
+
+    .feature{
+        grid-template-columns:1fr;
+    }
+
+    .about{
+        grid-template-columns:1fr;
+    }
+}
+
+@media(max-width:650px){
+
+    .nav{
+        padding:14px 18px;
+
+        align-items:flex-start;
+
+        flex-direction:column;
+
+        gap:13px;
+    }
+
+    nav{
+        width:100%;
+
+        display:flex;
+
+        flex-wrap:wrap;
+
+        gap:10px 17px;
+    }
+
+    nav a{
+        font-size:12px;
+    }
+
+    .hero{
+        padding:76px 20px 82px;
+    }
+
+    .hero h1{
+        font-size:39px;
+
+        letter-spacing:-1px;
+    }
+
+    .hero h2{
+        font-size:16px;
+    }
+
+    .hero p{
+        font-size:14px;
+    }
+
+    .hero-actions{
+        flex-direction:column;
+        align-items:center;
+    }
+
+    .hero-actions .btn{
+        width:100%;
+        max-width:280px;
+    }
+
+    .hero-visual{
+        min-height:0;
+
+        margin-top:18px;
+    }
+
+    .analytics-card{
+        width:100%;
+
+        padding:21px;
+    }
+
+    .analytics-bottom{
+        gap:7px;
+    }
+
+    .mini-stat{
+        padding:10px 7px;
+    }
+
+    .container{
+        padding:58px 18px;
+    }
+
+    .section-head{
+        margin-bottom:27px;
+    }
+
+    .domain-grid{
+        grid-template-columns:1fr;
+
+        gap:15px;
+    }
+
+    .domain-card{
+        min-height:260px;
+
+        padding:24px;
+    }
+
+    .domain-footer{
+        left:24px;
+        right:24px;
+        bottom:21px;
+    }
+
+    .intel-container{
+        padding:58px 18px;
+    }
+
+    .intel-heading{
+        flex-direction:column;
+
+        align-items:flex-start;
+    }
+
+    .intel-main{
+        padding:23px 18px;
+    }
+
+    .intel-chart{
+        height:155px;
+    }
+
+    .intel-side{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .intel-mini{
+        padding:20px 15px;
+    }
+
+    .feature-main{
+        padding:30px 24px;
+    }
+
+    .feature-side{
+        padding:30px 24px;
+    }
+
+    .panel{
+        padding:27px 24px;
+    }
+}
+
+/* =========================================================
+   ACCESSIBILITY
+========================================================= */
 
 @media(prefers-reduced-motion:reduce){
 
-*,
-*::before,
-*::after{
-scroll-behavior:auto !important;
-animation:none !important;
-transition:none !important;
-}
-.projects-link{
-display:inline-block;
-margin-top:20px;
-padding-top:14px;
-border-top:1px solid var(--line);
-color:#9a792d;
-font-size:12px;
-font-weight:700;
-letter-spacing:.7px;
-text-transform:uppercase;
-transition:color .25s ease,transform .25s ease;
+    *,
+    *::before,
+    *::after{
+        scroll-behavior:auto !important;
+
+        animation:none !important;
+
+        transition:none !important;
+    }
 }
 
-.projects-link:hover{
-color:var(--navy);
-transform:translateX(4px);
-}
-}   
 </style>
-
 </head>
 
 <body>
+
+<!-- =======================================================
+     HEADER
+======================================================= -->
 
 <header>
 
 <div class="nav">
 
-<a class="brand" href="#./">
+<a class="brand" href="#accueil">
 
-<span class="brand-mark">RA</span>
+<span class="brand-mark">
+RA
+</span>
 
 <span>
+
 <span class="brand-title">
 RAHAOUI ANALYTICS
 </span>
@@ -1256,16 +1674,28 @@ RAHAOUI ANALYTICS
 <span class="brand-sub">
 RAHAOUI MOHAMED
 </span>
+
 </span>
 
 </a>
 
 <nav>
 
-<a href="#accueil">Accueil</a>
-<a href="#analyses">Analyses</a>
-<a href="#publication">Publications</a>
-<a href="#apropos">À propos</a>
+<a href="#accueil">
+Accueil
+</a>
+
+<a href="#analyses">
+Analyses
+</a>
+
+<a href="#publication">
+Publications
+</a>
+
+<a href="#apropos">
+À propos
+</a>
 
 </nav>
 
@@ -1275,6 +1705,10 @@ RAHAOUI MOHAMED
 
 
 <main>
+
+<!-- =======================================================
+     HERO
+======================================================= -->
 
 <section class="hero" id="accueil">
 
@@ -1286,8 +1720,9 @@ RAHAOUI MOHAMED
 Plateforme personnelle d'analyse
 </div>
 
-<h1 class="main-title">
-RAHAOUI ANALYTICS
+<h1>
+RAHAOUI<br>
+ANALYTICS
 </h1>
 
 <h2>
@@ -1304,7 +1739,7 @@ les tendances et les sources statistiques.
 <div class="hero-actions">
 
 <a class="btn" href="#publication">
-Voir la denière analyse
+Voir la dernière analyse
 </a>
 
 <a class="btn secondary" href="#apropos">
@@ -1326,15 +1761,15 @@ Voir la denière analyse
 Economic Intelligence
 </span>
 
-<span class="analytics-dot"></span>
+<span class="analytics-dot">
+</span>
 
 </div>
+
 
 <div class="chart">
-
-<div class="chart-line"></div>
-
 </div>
+
 
 <div class="analytics-bottom">
 
@@ -1363,13 +1798,18 @@ Economic Intelligence
 
 </section>
 
+
+<!-- =======================================================
+     DOMAINES
+======================================================= -->
+
 <section class="container" id="analyses">
 
 <div class="section-head">
 
-<div class="eyebrow">
+<span class="eyebrow">
 Axes de travail
-</div>
+</span>
 
 <h2>
 Domaines d'analyse
@@ -1383,12 +1823,28 @@ Un espace dédié à l'étude des principales dynamiques
 </div>
 
 
-<div class="grid">
+<div class="domain-grid">
 
-<article class="card">
 
-<div class="num">01</div>
-   <div class="card-icon">◈</div>
+<!-- DOMAIN 01 -->
+
+<article class="domain-card">
+
+<div class="domain-top">
+
+<span class="domain-number">
+01
+</span>
+
+<span class="domain-status">
+Actif
+</span>
+
+</div>
+
+<div class="domain-icon">
+◈
+</div>
 
 <h3>
 Économie marocaine
@@ -1399,13 +1855,40 @@ Croissance, inflation, investissement,
 emploi, commerce extérieur et conjoncture.
 </p>
 
+<div class="domain-footer">
+
+<span class="domain-type">
+Analyse économique
+</span>
+
+<span class="domain-link">
+Explorer →
+</span>
+
+</div>
+
 </article>
 
 
-<article class="card">
+<!-- DOMAIN 02 -->
 
-<div class="num">02</div>
-   <div class="card-icon">◆</div>
+<article class="domain-card">
+
+<div class="domain-top">
+
+<span class="domain-number">
+02
+</span>
+
+<span class="domain-status">
+Actif
+</span>
+
+</div>
+
+<div class="domain-icon">
+◆
+</div>
 
 <h3>
 Finances publiques
@@ -1416,32 +1899,86 @@ Recettes, dépenses, déficit, dette publique
 et trajectoire budgétaire.
 </p>
 
+<div class="domain-footer">
+
+<span class="domain-type">
+Public Finance
+</span>
+
+<span class="domain-link">
+Explorer →
+</span>
+
+</div>
+
 </article>
 
 
-<article class="card">
+<!-- DOMAIN 03 -->
 
-<div class="num">03</div>
-   <div class="card-icon">▦</div>
+<a href="./projets-data-statistiques.html"
+   class="domain-card"
+   aria-label="Accéder aux projets Data & statistiques">
+
+<div class="domain-top">
+
+<span class="domain-number">
+03
+</span>
+
+<span class="domain-status">
+Projets
+</span>
+
+</div>
+
+<div class="domain-icon">
+▦
+</div>
 
 <h3>
 Data & statistiques
 </h3>
 
 <p>
-Analyse des données, Modélisation Economique, Prévisions, Aide à la décision.
+Analyse des données, modélisation économique,
+prévisions et aide à la décision.
 </p>
 
-<a class="projects-link" href="./projets-data-statistiques.html">
+<div class="domain-footer">
+
+<span class="domain-type">
+Data Analytics
+</span>
+
+<span class="domain-link">
 Voir les projets →
+</span>
+
+</div>
+
 </a>
-</article>
 
 
-<article class="card">
+<!-- DOMAIN 04 -->
 
-<div class="num">04</div>
-   <div class="card-icon">◇</div>
+<article class="domain-card">
+
+<div class="domain-top">
+
+<span class="domain-number">
+04
+</span>
+
+<span class="domain-status">
+Actif
+</span>
+
+</div>
+
+<div class="domain-icon">
+◇
+</div>
 
 <h3>
 Analyse financière
@@ -1452,20 +1989,214 @@ Performance, risques, indicateurs financiers
 et facteurs influençant les décisions.
 </p>
 
+<div class="domain-footer">
+
+<span class="domain-type">
+Financial Analysis
+</span>
+
+<span class="domain-link">
+Explorer →
+</span>
+
+</div>
+
 </article>
+
 
 </div>
 
 </section>
 
 
+<!-- =======================================================
+     ECONOMIC INTELLIGENCE
+======================================================= -->
+
+<section class="intel-section">
+
+<div class="intel-container">
+
+<div class="intel-heading">
+
+<div>
+
+<span class="section-head eyebrow">
+Economic Intelligence
+</span>
+
+<h2>
+Lecture des principales dynamiques économiques
+</h2>
+
+<p>
+Un espace dédié au suivi et à l'interprétation des indicateurs
+économiques, financiers et statistiques.
+</p>
+
+</div>
+
+<div class="intel-status">
+
+<span></span>
+
+Data Analysis
+
+</div>
+
+</div>
+
+
+<div class="intel-grid">
+
+
+<div class="intel-card intel-main">
+
+<div class="intel-card-head">
+
+<div>
+
+<span class="intel-label">
+ANALYTICAL VIEW
+</span>
+
+<h3>
+Economic Trends
+</h3>
+
+</div>
+
+<div class="intel-symbol">
+↗
+</div>
+
+</div>
+
+
+<div class="intel-chart">
+
+<div class="trend-line">
+
+<span class="point p1"></span>
+<span class="point p2"></span>
+<span class="point p3"></span>
+<span class="point p4"></span>
+<span class="point p5"></span>
+<span class="point p6"></span>
+
+</div>
+
+</div>
+
+
+<div class="intel-footer">
+
+<span>
+Macro indicators
+</span>
+
+<span>
+Trend analysis
+</span>
+
+<span>
+Statistical reading
+</span>
+
+</div>
+
+</div>
+
+
+<div class="intel-side">
+
+<div class="intel-mini">
+
+<span class="mini-label">
+01
+</span>
+
+<strong>
+Macro
+</strong>
+
+<p>
+Conjoncture économique
+</p>
+
+</div>
+
+
+<div class="intel-mini">
+
+<span class="mini-label">
+02
+</span>
+
+<strong>
+Finance
+</strong>
+
+<p>
+Performance & risques
+</p>
+
+</div>
+
+
+<div class="intel-mini">
+
+<span class="mini-label">
+03
+</span>
+
+<strong>
+Public Finance
+</strong>
+
+<p>
+Budget & dette
+</p>
+
+</div>
+
+
+<div class="intel-mini">
+
+<span class="mini-label">
+04
+</span>
+
+<strong>
+Data
+</strong>
+
+<p>
+Indicateurs & statistiques
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =======================================================
+     PUBLICATION
+======================================================= -->
+
 <section class="container" id="publication">
 
 <div class="section-head">
 
-<div class="eyebrow">
+<span class="eyebrow">
 Publication récente
-</div>
+</span>
 
 <h2>
 Note d'analyse N°01
@@ -1491,8 +2222,12 @@ Lecture analytique du Projet de loi de finances 2026
 des finances publiques et de la trajectoire budgétaire.
 </p>
 
-<a class="btn" href="./note-analyse-01.pdf" target="_blank">
-    Consulter la publication
+<a class="btn"
+   href="./note-analyse-01.pdf"
+   target="_blank">
+
+Consulter la publication
+
 </a>
 
 </div>
@@ -1502,7 +2237,9 @@ des finances publiques et de la trajectoire budgétaire.
 
 <div class="stat">
 
-<strong>2026</strong>
+<strong>
+2026
+</strong>
 
 <span>
 Horizon d'analyse
@@ -1513,7 +2250,9 @@ Horizon d'analyse
 
 <div class="stat">
 
-<strong>Macro</strong>
+<strong>
+Macro
+</strong>
 
 <span>
 Contexte économique
@@ -1524,7 +2263,9 @@ Contexte économique
 
 <div class="stat">
 
-<strong>Budget</strong>
+<strong>
+Budget
+</strong>
 
 <span>
 Finances publiques
@@ -1539,13 +2280,17 @@ Finances publiques
 </section>
 
 
+<!-- =======================================================
+     À PROPOS
+======================================================= -->
+
 <section class="container" id="apropos">
 
 <div class="section-head">
 
-<div class="eyebrow">
+<span class="eyebrow">
 Profil
-</div>
+</span>
 
 <h2>
 À propos
@@ -1555,6 +2300,7 @@ Profil
 
 
 <div class="about">
+
 
 <div class="panel">
 
@@ -1570,28 +2316,56 @@ Lauréat du Master Ingénierie de la Décision.<br>
 </em>
 </p>
 
+
 <p style="margin-top:18px;">
-<strong>Intérêts professionnels :</strong><br>
-Analyse économique et financière • Finances publiques •
-Analyse macroéconomique • Investissement et développement économique •
-Gestion des risques • Analyse des données.
+
+<strong>
+Intérêts professionnels :
+</strong>
+
+<br>
+
+Analyse économique et financière •
+Finances publiques •
+Analyse macroéconomique •
+Investissement et développement économique •
+Gestion des risques •
+Analyse des données.
+
 </p>
 
 
-<div style="margin-top:22px; padding-top:18px; border-top:1px solid var(--line);">
+<div class="contact">
 
-<p style="font-size:13px; margin-bottom:9px;">
-<strong>Contact</strong>
-</p>
+<div class="contact-title">
+Contact
+</div>
 
-<p style="font-size:13px; line-height:2;">
+<p>
 
-✉️ <a href="mailto:simohamedrahaoui90@gmail.com">simohamedrahaoui90@gmail.com</a><br>
+✉️
+<a href="mailto:simohamedrahaoui90@gmail.com">
+simohamedrahaoui90@gmail.com
+</a>
 
-in <a href="https://www.linkedin.com/in/mohamed-rahaoui-61a941243" target="_blank">RAHAOUI MOHAMED</a><br>
+<br>
 
-☎️ <a href="tel:+212626020804">+212 626020804</a>
-   
+in
+<a href="https://www.linkedin.com/in/mohamed-rahaoui-61a941243"
+   target="_blank"
+   rel="noopener">
+
+RAHAOUI MOHAMED
+
+</a>
+
+<br>
+
+☎️
+<a href="tel:+212626020804">
++212 626020804
+</a>
+
 </p>
 
 </div>
@@ -1613,6 +2387,7 @@ un portefeuille de publications.
 
 </div>
 
+
 </div>
 
 </section>
@@ -1620,19 +2395,27 @@ un portefeuille de publications.
 </main>
 
 
+<!-- =======================================================
+     FOOTER
+======================================================= -->
+
 <footer>
 
 <p>
+
 <strong>
 RAHAOUI ANALYTICS
 </strong>
+
 — RAHAOUI MOHAMED
+
 </p>
 
 <small>
 Economic • Financial • Data Analysis | 2026
 </small>
 
-</footer> 
+</footer>
+
 </body>
 </html>
