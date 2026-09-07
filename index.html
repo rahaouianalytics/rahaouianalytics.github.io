@@ -274,16 +274,18 @@ nav a:hover::after{
 }
 
 .kicker::before{
-    content:"";
+    display:none;
+}
 
-    width:27px;
-    height:1px;
-
-    background:var(--gold);
+.kicker-line{
+    color:var(--gold);
+    font-weight:400;
+    margin:0 8px;
+}
 }
 
 .hero h1{
-    font-size:clamp(42px,6vw,67px);
+    font-size:clamp(38px,5vw,56px);
     line-height:1.02;
 
     letter-spacing:-2px;
@@ -1717,7 +1719,9 @@ Publications
 <div class="hero-copy">
 
 <div class="kicker">
+<span class="kicker-line">—</span>
 Plateforme personnelle d'analyse
+<span class="kicker-line">—</span>
 </div>
 
 <h1>
