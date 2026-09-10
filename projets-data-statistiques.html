@@ -19,7 +19,33 @@
     --border:rgba(34,151,255,.38);
     --border-bright:rgba(22,217,255,.85);
 }
+.topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 5%;
+    border-bottom: 1px solid rgba(40, 215, 255, 0.15);
+    background: rgba(7, 17, 31, 0.85);
+}
 
+.brand {
+    font-size: 17px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    color: #f4f8fb;
+}
+
+.back-home {
+    color: #28d7ff;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.back-home:hover {
+    color: #f4f8fb;
+}
 *{
     margin:0;
     padding:0;
@@ -151,7 +177,7 @@ header{
 
 .hero{
     margin-left:10px;
-    margin-bottom:21px;
+    margin-bottom:40px;
     max-width:540px;
 }
 
@@ -474,11 +500,23 @@ footer{
     .project-card.featured .project-image{
         height:210px;
     }
+    .footer {
+    text-align: center;
+    margin-top: 70px;
+    padding: 25px 20px;
+    border-top: 1px solid rgba(40, 215, 255, 0.12);
+    color: #9aabba;
+    font-size: 13px;
+}
 }
 </style>
 </head>
 
 <body>
+<header class="topbar">
+    <div class="brand">RAHAOUI ANALYTICS</div>
+    <a href="./index.html" class="back-home">← Retour à l’accueil</a>
+</header>    
 
 <main class="container">
 
@@ -736,7 +774,7 @@ footer{
 
 </main>
 
-<footer>
+<footer class="footer">
     © 2026 RAHAOUI ANALYTICS — Data & statistiques
 </footer>
 
