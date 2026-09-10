@@ -3,18 +3,21 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Data & statistiques | RAHAOUI ANALYTICS</title>
+
+<title>Portfolio Data Analytics | RAHAOUI ANALYTICS</title>
 
 <style>
 :root{
-    --bg:#07111f;
-    --card:#0c1a2b;
-    --card2:#101f32;
-    --cyan:#28d7ff;
-    --cyan-soft:rgba(40,215,255,.18);
-    --white:#f4f8fb;
-    --muted:#9aabba;
-    --border:rgba(40,215,255,.22);
+    --bg:#031326;
+    --bg-soft:#061a31;
+    --card:#071b32;
+    --card-inner:#0a213b;
+    --cyan:#16d9ff;
+    --blue:#318cff;
+    --text:#f3f7fb;
+    --muted:#91abc5;
+    --border:rgba(34,151,255,.38);
+    --border-bright:rgba(22,217,255,.85);
 }
 
 *{
@@ -23,267 +26,453 @@
     box-sizing:border-box;
 }
 
-body{
-    font-family:Arial, Helvetica, sans-serif;
-    background:
-        radial-gradient(circle at 20% 10%,rgba(40,215,255,.07),transparent 30%),
-        radial-gradient(circle at 85% 80%,rgba(40,215,255,.05),transparent 30%),
-        var(--bg);
-    color:var(--white);
-    min-height:100vh;
+html{
+    scroll-behavior:smooth;
 }
 
+body{
+    min-height:100vh;
+    font-family:Arial, Helvetica, sans-serif;
+    color:var(--text);
+    background:
+        radial-gradient(circle at 75% 12%,rgba(19,112,214,.13),transparent 30%),
+        radial-gradient(circle at 10% 50%,rgba(0,170,255,.06),transparent 30%),
+        var(--bg);
+}
+
+/* ================= HEADER ================= */
+
 header{
-    border-bottom:1px solid rgba(255,255,255,.06);
-    background:rgba(7,17,31,.88);
-    backdrop-filter:blur(12px);
+    height:59px;
+    border-bottom:1px solid rgba(25,123,210,.28);
+    background:rgba(3,19,38,.94);
 }
 
 .nav{
-    max-width:1180px;
+    max-width:1040px;
+    height:100%;
     margin:auto;
-    padding:20px 28px;
+    padding:0 12px;
     display:flex;
     align-items:center;
     justify-content:space-between;
 }
 
 .brand{
-    color:white;
+    display:flex;
+    align-items:center;
+    gap:12px;
+    color:#fff;
     text-decoration:none;
-    font-size:18px;
+    font-size:15px;
     font-weight:700;
-    letter-spacing:1.5px;
+    letter-spacing:.3px;
 }
 
-.brand span{
+.brand-logo{
+    font-size:27px;
+    font-weight:800;
+    letter-spacing:-3px;
+    color:#fff;
+}
+
+.brand-logo span{
     color:var(--cyan);
+}
+
+.brand-name span{
+    color:#159fe2;
 }
 
 .nav-links{
     display:flex;
-    gap:28px;
+    align-items:center;
+    height:100%;
+    gap:34px;
 }
 
 .nav-links a{
-    color:var(--muted);
+    position:relative;
+    height:100%;
+    display:flex;
+    align-items:center;
+    color:#a4b7cc;
     text-decoration:none;
-    font-size:14px;
-    transition:.3s;
+    font-size:12px;
+    transition:.25s ease;
 }
 
 .nav-links a:hover{
     color:var(--cyan);
 }
 
-.container{
-    max-width:1180px;
-    margin:auto;
-    padding:70px 28px 90px;
+.nav-links a.active{
+    color:var(--cyan);
+    font-weight:700;
 }
+
+.nav-links a.active::after{
+    content:"";
+    position:absolute;
+    bottom:0;
+    left:0;
+    right:0;
+    height:4px;
+    background:var(--cyan);
+    box-shadow:0 0 10px rgba(22,217,255,.65);
+}
+
+/* ================= MAIN ================= */
+
+.container{
+    max-width:1040px;
+    margin:auto;
+    padding:34px 12px 25px;
+}
+
+/* retour */
 
 .back{
     display:inline-flex;
     align-items:center;
     gap:8px;
-    color:var(--muted);
+    margin-bottom:25px;
+    color:#8fa7c0;
     text-decoration:none;
-    font-size:14px;
-    margin-bottom:38px;
-    transition:.3s;
+    font-size:13px;
+    transition:.25s;
 }
 
 .back:hover{
     color:var(--cyan);
 }
 
+/* ================= HERO ================= */
+
 .hero{
-    max-width:780px;
-    margin-bottom:55px;
+    margin-left:10px;
+    margin-bottom:21px;
+    max-width:540px;
 }
 
 .eyebrow{
+    margin-bottom:9px;
     color:var(--cyan);
-    text-transform:uppercase;
-    letter-spacing:3px;
-    font-size:12px;
+    font-size:18px;
     font-weight:700;
-    margin-bottom:16px;
+    letter-spacing:1.8px;
+    text-transform:uppercase;
 }
 
-h1{
-    font-size:clamp(38px,6vw,62px);
-    line-height:1.05;
-    margin-bottom:20px;
+.hero h1{
+    font-size:45px;
+    line-height:1.08;
+    margin-bottom:10px;
+    letter-spacing:-1.2px;
+}
+
+.hero h1 span{
+    color:#159fe2;
 }
 
 .hero p{
-    color:var(--muted);
-    font-size:17px;
-    line-height:1.8;
-    max-width:720px;
+    max-width:500px;
+    color:#91abc5;
+    font-size:15px;
+    line-height:1.55;
 }
+
+/* ================= PROJECT GRID ================= */
 
 .projects-grid{
     display:grid;
     grid-template-columns:repeat(2,1fr);
-    gap:28px;
+    gap:17px;
 }
+
+/* ================= CARD ================= */
 
 .project-card{
-    position:relative;
-    overflow:hidden;
-    background:linear-gradient(145deg,var(--card),var(--card2));
+    min-height:316px;
+    padding:18px;
+    display:flex;
+    flex-direction:column;
     border:1px solid var(--border);
-    border-radius:20px;
-    transition:.35s ease;
-    box-shadow:0 12px 40px rgba(0,0,0,.22);
-}
-
-.project-card::before{
-    content:"";
-    position:absolute;
-    top:-100px;
-    right:-100px;
-    width:230px;
-    height:230px;
-    background:radial-gradient(circle,var(--cyan-soft),transparent 68%);
-    pointer-events:none;
+    border-radius:15px;
+    background:
+        linear-gradient(145deg,
+            rgba(8,31,55,.98),
+            rgba(4,22,41,.98));
+    box-shadow:
+        inset 0 1px 0 rgba(83,170,255,.06),
+        0 8px 24px rgba(0,0,0,.16);
+    transition:.3s ease;
 }
 
 .project-card:hover{
-    transform:translateY(-7px);
-    border-color:rgba(40,215,255,.6);
+    transform:translateY(-3px);
+    border-color:var(--border-bright);
     box-shadow:
-        0 18px 50px rgba(0,0,0,.35),
-        0 0 28px rgba(40,215,255,.12);
+        0 10px 30px rgba(0,0,0,.25),
+        0 0 18px rgba(22,217,255,.08);
 }
 
+/* ================= IMAGE ================= */
+
 .project-image{
-    height:230px;
-    background:
-        linear-gradient(135deg,rgba(40,215,255,.08),rgba(7,17,31,.3)),
-        #091625;
-    border-bottom:1px solid rgba(40,215,255,.14);
-    display:flex;
-    align-items:center;
-    justify-content:center;
+    height:104px;
+    margin-bottom:13px;
     overflow:hidden;
+    border:1px solid rgba(35,123,207,.25);
+    border-radius:10px;
+    background:#071b31;
 }
 
 .project-image img{
     width:100%;
     height:100%;
-    object-fit:cover;
     display:block;
+    object-fit:cover;
 }
 
-.project-content{
-    padding:27px;
+/* première carte : image plus compacte dans la carte */
+
+.project-card.featured{
+    min-height:316px;
 }
+
+.project-card.featured .project-body{
+    display:grid;
+    grid-template-columns:196px 1fr;
+    gap:17px;
+}
+
+.project-card.featured .project-image{
+    height:278px;
+    margin:0;
+}
+
+.project-card.featured .project-image img{
+    object-fit:cover;
+}
+
+.project-card.featured .project-content{
+    padding-top:0;
+}
+
+/* ================= PROJECT CONTENT ================= */
 
 .project-number{
-    display:inline-block;
+    display:inline-flex;
+    align-items:center;
+    width:max-content;
+    padding:5px 11px;
+    margin-bottom:7px;
+    border:1px solid rgba(22,217,255,.65);
+    border-radius:20px;
     color:var(--cyan);
-    font-size:12px;
+    font-size:10px;
     font-weight:700;
-    letter-spacing:2px;
-    margin-bottom:13px;
+    letter-spacing:.5px;
+}
+
+.project-category{
+    color:#11bfe9;
+    font-size:11px;
+    margin-bottom:8px;
 }
 
 .project-title{
-    font-size:24px;
+    font-size:17px;
     line-height:1.25;
-    margin-bottom:14px;
+    margin-bottom:9px;
 }
 
 .project-description{
-    color:var(--muted);
-    line-height:1.7;
-    font-size:14px;
-    margin-bottom:20px;
+    color:#91abc5;
+    font-size:11.5px;
+    line-height:1.55;
+    margin-bottom:10px;
 }
+
+/* ================= TAGS ================= */
 
 .tags{
     display:flex;
     flex-wrap:wrap;
-    gap:8px;
-    margin-bottom:25px;
+    gap:7px;
+    margin-bottom:13px;
 }
 
 .tag{
-    padding:7px 11px;
-    border-radius:7px;
-    border:1px solid rgba(40,215,255,.18);
-    background:rgba(40,215,255,.06);
-    color:#b8dce5;
-    font-size:11px;
+    min-width:56px;
+    padding:5px 10px;
+    text-align:center;
+    border-radius:15px;
+    border:1px solid rgba(40,135,229,.45);
+    background:rgba(11,53,91,.45);
+    color:#42bfff;
+    font-size:9px;
 }
+
+/* ================= LINK ================= */
 
 .project-link{
     display:inline-flex;
     align-items:center;
-    gap:8px;
+    gap:7px;
+    width:max-content;
     color:var(--cyan);
     text-decoration:none;
-    font-size:14px;
+    font-size:12px;
     font-weight:700;
-    transition:.3s;
+    transition:.25s;
 }
 
 .project-link:hover{
-    gap:13px;
+    gap:11px;
 }
 
-@media(max-width:750px){
+/* ================= FUTURE PROJECT ================= */
+
+.future-image{
+    height:104px;
+    margin-bottom:13px;
+    border:1px solid rgba(35,123,207,.25);
+    border-radius:10px;
+    background:
+        linear-gradient(145deg,#09223d,#071a30);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.future-icon{
+    position:relative;
+    width:35px;
+    height:35px;
+}
+
+.future-icon::before{
+    content:"";
+    position:absolute;
+    bottom:5px;
+    left:2px;
+    width:31px;
+    height:2px;
+    background:#4c91df;
+    box-shadow:0 0 7px rgba(76,145,223,.25);
+}
+
+.future-icon::after{
+    content:"";
+    position:absolute;
+    bottom:7px;
+    left:8px;
+    width:6px;
+    height:13px;
+    background:#4c91df;
+    box-shadow:
+        9px -7px 0 #4c91df,
+        18px -15px 0 #4c91df;
+    border-radius:1px;
+}
+
+/* ================= FOOTER ================= */
+
+footer{
+    max-width:1040px;
+    margin:28px auto 0;
+    padding:17px 12px;
+    border-top:1px solid rgba(35,123,207,.24);
+    text-align:center;
+    color:#728ba5;
+    font-size:10px;
+}
+
+/* ================= MOBILE ================= */
+
+@media(max-width:760px){
+
+    header{
+        height:auto;
+    }
+
     .nav{
-        padding:18px;
+        padding:14px 18px;
         flex-direction:column;
-        gap:15px;
+        gap:13px;
     }
 
     .nav-links{
-        gap:17px;
+        width:100%;
+        height:auto;
+        gap:10px 17px;
         flex-wrap:wrap;
         justify-content:center;
     }
 
+    .nav-links a{
+        height:auto;
+        font-size:11px;
+        padding-bottom:4px;
+    }
+
+    .nav-links a.active::after{
+        bottom:0;
+        height:2px;
+    }
+
     .container{
-        padding:45px 18px 70px;
+        padding:30px 18px 45px;
+    }
+
+    .hero{
+        margin-left:0;
+        margin-bottom:25px;
+    }
+
+    .hero h1{
+        font-size:36px;
+    }
+
+    .hero p{
+        font-size:14px;
     }
 
     .projects-grid{
         grid-template-columns:1fr;
     }
 
-    .project-image{
-        height:210px;
+    .project-card{
+        min-height:auto;
+    }
+
+    .project-card.featured .project-body{
+        grid-template-columns:1fr;
+    }
+
+    .project-card.featured .project-image{
+        height:230px;
     }
 }
 
-@media(max-width:450px){
-    .nav-links{
-        gap:12px;
+@media(max-width:430px){
+
+    .brand{
+        font-size:14px;
     }
 
-    .nav-links a{
-        font-size:12px;
+    .brand-logo{
+        font-size:24px;
     }
 
-    h1{
-        font-size:38px;
+    .hero h1{
+        font-size:33px;
     }
 
-    .hero p{
-        font-size:15px;
-    }
-
-    .project-content{
-        padding:22px;
-    }
-
-    .project-title{
-        font-size:21px;
+    .project-card.featured .project-image{
+        height:210px;
     }
 }
 </style>
@@ -291,87 +480,265 @@ h1{
 
 <body>
 
-<header>
-    <nav class="nav">
-        <a href="./index.html" class="brand">
-            RAHAOUI <span>ANALYTICS</span>
-        </a>
-
-        <div class="nav-links">
-            <a href="./index.html">Accueil</a>
-            <a href="./index.html#analyses">Domaines d’analyse</a>
-            <a href="./projets-data-statistiques.html">Data & statistiques</a>
-            <a href="./index.html#publications">Publications</a>
-            <a href="./index.html#a-propos">À propos</a>
-        </div>
-    </nav>
-</header>
-
 <main class="container">
 
-    <a href="./index.html#analyses" class="back">
-        ← Retour aux domaines d’analyse
+    <a href="./index.html" class="back">
+        ← Retour à l’accueil
     </a>
 
     <section class="hero">
-        <div class="eyebrow">Portfolio · Data Analytics</div>
 
-        <h1>Data & statistiques</h1>
+        <div class="eyebrow">
+            Portfolio · Data Analytics
+        </div>
 
         <p>
-            Projets d’analyse de données, de modélisation statistique
-            et de machine learning, développés autour de problématiques
-            économiques, financières et décisionnelles.
+            Des projets d’analyse de données, de statistiques et de
+            modélisation pour transformer les données en résultats
+            concrets et utiles.
         </p>
+
     </section>
 
     <section class="projects-grid">
 
-        <article class="project-card">
+        <!-- ================= PROJET 01 ================= -->
 
-            <div class="project-image">
-                <img
-                    src="./assets/projet-maladies-cardiaques.jpg"
-                    alt="Analyse prédictive des maladies cardiaques"
-                >
-            </div>
+        <article class="project-card featured">
 
-            <div class="project-content">
+            <div class="project-body">
 
-                <span class="project-number">PROJET 01</span>
-
-                <h2 class="project-title">
-                    Analyse prédictive des maladies cardiaques
-                </h2>
-
-                <p class="project-description">
-                    Analyse d’un jeu de données médical afin d’identifier
-                    les principaux facteurs associés aux maladies cardiaques
-                    et de comparer plusieurs méthodes de classification
-                    pour la prédiction du risque.
-                </p>
-
-                <div class="tags">
-                    <span class="tag">Python</span>
-                    <span class="tag">Pandas</span>
-                    <span class="tag">Machine Learning</span>
-                    <span class="tag">Statistiques</span>
+                <div class="project-image">
+                    <img
+                        src="./image_analyse_predicitive_maladies_cardiaques.png"
+                        alt="Analyse prédictive des maladies cardiaques"
+                    >
                 </div>
 
-                <a
-                    href="./projet_des_maladies.html"
-                    class="project-link"
-                    target="_blank"
-                >
-                    Voir le projet →
-                </a>
+                <div class="project-content">
+
+                    <span class="project-number">
+                        PROJET 01
+                    </span>
+
+                    <div class="project-category">
+                        Data Analytics · Machine Learning
+                    </div>
+
+                    <h2 class="project-title">
+                        Analyse prédictive des maladies cardiaques
+                    </h2>
+
+                    <p class="project-description">
+                        Analyse d’un jeu de données médical afin d’explorer
+                        les caractéristiques des patients et d’évaluer
+                        plusieurs méthodes d’apprentissage statistique
+                        pour la prédiction des maladies cardiaques.
+                    </p>
+
+                    <div class="tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">Pandas</span>
+                        <span class="tag">Machine Learning</span>
+                        <span class="tag">Statistiques</span>
+                    </div>
+
+                    <a
+                        href="./projet_des_maladies.html"
+                        class="project-link"
+                        target="_blank"
+                    >
+                        Voir le projet →
+                    </a>
+
+                </div>
 
             </div>
+
+        </article>
+
+
+        <!-- ================= PROJET 02 ================= -->
+
+        <article class="project-card">
+
+            <div class="future-image">
+                <div class="future-icon"></div>
+            </div>
+
+            <span class="project-number">
+                PROJET 02
+            </span>
+
+            <h2 class="project-title">
+                Projet à venir
+            </h2>
+
+            <p class="project-description">
+                Un nouveau projet d’analyse de données sera prochainement
+                ajouté à ce portfolio.
+            </p>
+
+            <div class="tags">
+                <span class="tag">—</span>
+                <span class="tag">—</span>
+                <span class="tag">—</span>
+                <span class="tag">—</span>
+            </div>
+
+            <a href="#" class="project-link">
+                Bientôt disponible →
+            </a>
+
+        </article>
+
+
+        <!-- ================= PROJET 03 ================= -->
+
+        <article class="project-card">
+
+            <div class="future-image">
+                <div class="future-icon"></div>
+            </div>
+
+            <span class="project-number">
+                PROJET 03
+            </span>
+
+            <h2 class="project-title">
+                Projet à venir
+            </h2>
+
+            <p class="project-description">
+                Un nouveau projet d’analyse de données sera prochainement
+                ajouté à ce portfolio.
+            </p>
+
+            <div class="tags">
+                <span class="tag">—</span>
+                <span class="tag">—</span>
+                <span class="tag">—</span>
+                <span class="tag">—</span>
+            </div>
+
+            <a href="#" class="project-link">
+                Bientôt disponible →
+            </a>
+
+        </article>
+
+
+        <!-- ================= PROJET 04 ================= -->
+
+        <article class="project-card">
+
+            <div class="future-image">
+                <div class="future-icon"></div>
+            </div>
+
+            <span class="project-number">
+                PROJET 04
+            </span>
+
+            <h2 class="project-title">
+                Projet à venir
+            </h2>
+
+            <p class="project-description">
+                Un nouveau projet d’analyse de données sera prochainement
+                ajouté à ce portfolio.
+            </p>
+
+            <div class="tags">
+                <span class="tag">—</span>
+                <span class="tag">—</span>
+                <span class="tag">—</span>
+                <span class="tag">—</span>
+            </div>
+
+            <a href="#" class="project-link">
+                Bientôt disponible →
+            </a>
+
+        </article>
+
+
+        <!-- ================= PROJET 05 ================= -->
+
+        <article class="project-card">
+
+            <div class="future-image">
+                <div class="future-icon"></div>
+            </div>
+
+            <span class="project-number">
+                PROJET 05
+            </span>
+
+            <h2 class="project-title">
+                Projet à venir
+            </h2>
+
+            <p class="project-description">
+                Un nouveau projet d’analyse de données sera prochainement
+                ajouté à ce portfolio.
+            </p>
+
+            <div class="tags">
+                <span class="tag">—</span>
+                <span class="tag">—</span>
+                <span class="tag">—</span>
+                <span class="tag">—</span>
+            </div>
+
+            <a href="#" class="project-link">
+                Bientôt disponible →
+            </a>
+
+        </article>
+
+
+        <!-- ================= PROJET 06 ================= -->
+
+        <article class="project-card">
+
+            <div class="future-image">
+                <div class="future-icon"></div>
+            </div>
+
+            <span class="project-number">
+                PROJET 06
+            </span>
+
+            <h2 class="project-title">
+                Projet à venir
+            </h2>
+
+            <p class="project-description">
+                Un nouveau projet d’analyse de données sera prochainement
+                ajouté à ce portfolio.
+            </p>
+
+            <div class="tags">
+                <span class="tag">—</span>
+                <span class="tag">—</span>
+                <span class="tag">—</span>
+                <span class="tag">—</span>
+            </div>
+
+            <a href="#" class="project-link">
+                Bientôt disponible →
+            </a>
+
         </article>
 
     </section>
 
 </main>
+
+<footer>
+    © 2026 RAHAOUI ANALYTICS — Data & statistiques
+</footer>
 
 </body>
 </html>
