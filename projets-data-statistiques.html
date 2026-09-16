@@ -253,14 +253,18 @@ header{
 /* ================= IMAGE ================= */
 
 .project-image {
-    height: 220px;
+    width: 100%;
+    aspect-ratio: 16 / 9;
     overflow: hidden;
+    border-radius: 12px;
 }
 
 .project-image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: center;
+    display: block;
 }
 
 /* première carte : image plus compacte dans la carte */
