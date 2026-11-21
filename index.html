@@ -6,7 +6,6 @@
 
 <meta name="description" content="RAHAOUI ANALYTICS — analyses économiques, financières et statistiques du Maroc.">
 <meta name="robots" content="index, follow">
-
 <link rel="canonical" href="https://rahaouianalytics.github.io/">
 
 <meta property="og:title" content="RAHAOUI ANALYTICS | Analyse économique et financière">
@@ -651,9 +650,9 @@ nav a:hover::after{
 .domain-card{
     position:relative;
 
-    min-height:275px;
+    min-height:150px;
 
-    padding:29px;
+    padding:18px;
 
     overflow:hidden;
 
@@ -1186,7 +1185,7 @@ nav a:hover::after{
 }
 
 .feature-main{
-    padding:42px;
+    padding:28px;
 }
 
 .feature-tag{
@@ -1579,15 +1578,15 @@ footer small{
     }
 
     .domain-card{
-        min-height:260px;
+        min-height:150px;
 
-        padding:24px;
+        padding:18px;
     }
 
     .domain-footer{
-        left:24px;
-        right:24px;
-        bottom:21px;
+        left:18px;
+        right:18px;
+        bottom:15px;
     }
 
     .intel-container{
@@ -1617,7 +1616,7 @@ footer small{
     }
 
     .feature-main{
-        padding:30px 24px;
+        padding:28px 30px;
     }
 
     .feature-side{
@@ -1657,6 +1656,52 @@ footer small{
 .feature h3 {
     font-size: 24px !important;
 }   
+   /* =================================
+   CARTE PUBLICATION N°01 — DESIGN PREMIUM
+================================= */
+
+#publication article.feature:first-of-type {
+    border: 1px solid rgba(190, 153, 82, 0.45);
+    border-radius: 18px;
+    background: linear-gradient(125deg, #ffffff 55%, #f8f5ed);
+    box-shadow: 0 14px 35px rgba(11, 29, 53, 0.12);
+    transition: all 0.35s ease;
+}
+
+#publication article.feature:first-of-type:hover {
+    box-shadow: 0 20px 45px rgba(11, 29, 53, 0.18);
+    transform: translateY(-4px);
+}
+
+#publication article.feature:first-of-type .feature-side {
+    background: linear-gradient(145deg, #102944, #071525);
+    border-left: 1px solid rgba(210, 173, 85, 0.35);
+}
+
+#publication article.feature:first-of-type .feature-side strong {
+    color: #d9b66f;
+    letter-spacing: 0.5px;
+}
+
+#publication article.feature:first-of-type .feature-tag {
+    background: #f3eee3;
+    color: #8b6a32;
+    border: 1px solid rgba(190, 153, 82, 0.35);
+    letter-spacing: 1px;
+}
+
+#publication article.feature:first-of-type .btn {
+    background: linear-gradient(135deg, #b18a49, #d2ad65);
+    color: #10233b;
+    border: 1px solid #c5a15e;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+#publication article.feature:first-of-type .btn:hover {
+    background: linear-gradient(135deg, #102944, #071525);
+    color: #ffffff;
+}
 </style>
 </head>
 
@@ -2201,98 +2246,96 @@ Indicateurs & statistiques
 
 
 <!-- =======================================================
-     PUBLICATION
+     PUBLICATIONS
 ======================================================= -->
 
 <section class="container" id="publication">
 
-<div class="section-head">
+    <div class="section-head">
+        <span class="eyebrow">
+            Publication récente
+        </span>
 
-<span class="eyebrow">
-Publication récente
-</span>
+        <h2>
+            Notes d'analyse
+        </h2>
+    </div>
 
-<h2>
-Note d'analyse N°01
-</h2>
+    <div class="publication-list">
 
-</div>
+        <article class="publication-card">
 
+            <div class="publication-content">
 
-<article class="feature">
+                <span class="publication-number">
+                    NOTE D'ANALYSE N°01
+                </span>
 
-<div class="feature-main">
+                <h3>
+                    Lecture analytique du Projet de loi de finances 2026
+                </h3>
 
-<span class="feature-tag">
-MAROC • 2026
-</span>
+                <p>
+                    Analyse du contexte macroéconomique, des finances publiques
+                    et des principales orientations budgétaires du Maroc.
+                </p>
 
-<h3>
-Lecture analytique du Projet de loi de finances 2026
-</h3>
+                <a class="publication-link"
+                   href="./note-analyse-01.pdf"
+                   target="_blank">
+                    Consulter la publication
+                    <span>↗</span>
+                </a>
 
-<p>
-Étude du contexte macroéconomique,
-des finances publiques et de la trajectoire budgétaire.
-</p>
+            </div>
 
-<a class="btn"
-   href="./note-analyse-01.pdf"
-   target="_blank">
+            <div class="publication-year">
+                <span>MAROC</span>
+                <strong>2026</strong>
+                <span>FINANCES PUBLIQUES</span>
+            </div>
 
-Consulter la publication
-
-</a>
-
-</div>
-
-
-<aside class="feature-side">
-
-<div class="stat">
-
-<strong>
-2026
-</strong>
-
-<span>
-Horizon d'analyse
-</span>
-
-</div>
+        </article>
 
 
-<div class="stat">
+        <article class="publication-card">
 
-<strong>
-Macro
-</strong>
+            <div class="publication-content">
 
-<span>
-Contexte économique
-</span>
+                <span class="publication-number">
+                    
+                </span>
 
-</div>
+                <h3>
+                    Lecture analytique du Projet de loi de finances 2027
+                </h3>
 
+                <p>
+                    Étude des orientations économiques et budgétaires,
+                    des équilibres financiers et des perspectives
+                    des finances publiques au Maroc.
+                </p>
 
-<div class="stat">
+                <a class="publication-link"
+                   href="./note-analyse-02.pdf"
+                   target="_blank">
+                    Consulter la publication
+                    <span>↗</span>
+                </a>
 
-<strong>
-Budget
-</strong>
+            </div>
 
-<span>
-Finances publiques
-</span>
+            <div class="publication-year">
+                <span>MAROC</span>
+                <strong>2027</strong>
+                <span>FINANCES PUBLIQUES</span>
+            </div>
 
-</div>
+        </article>
 
-</aside>
-
-</article>
+    </div>
 
 </section>
-
 
 <!-- =======================================================
      À PROPOS
